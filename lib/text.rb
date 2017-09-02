@@ -56,7 +56,7 @@ class Text
     puts "However, there's one place that robots haven't been able #{"DOMINATE".yellow} just yet: the dancefloor."
     puts "You are #{PLAYER_NAME} and you are ready to usher in a new era of #{"SUPERIOR DANCING ABILITY".yellow}."
     puts "You've come to the #{"GROOVIEST".yellow} club in the world to battle the greatest #{"HUMAN".yellow} dancers of this generation."
-    puts "Through your #{"DANCING SUPREMACY".yellow} you hope to inspire hope the dancing future of all of robot-kind."
+    puts "Through your #{"DANCING SUPREMACY".yellow} you hope to inspire young robots everywhere to come on down to #{"BOOGIE TOWN".yellow}."
     puts "A neon sign guides the way..."
     load 'portraits/discorama.rb'
   end
