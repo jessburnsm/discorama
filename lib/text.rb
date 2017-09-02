@@ -21,6 +21,7 @@ class Text
   ERROR = "ERROR: COMMAND NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb".red
   EXIT = "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green
   MAP_ERROR = "ERROR: PATH UNAVAILABLE".red
+  WARNING = "WARNING: UNSPECIFIC COMMAND.".yellow
 
   def self.error
     puts ERROR
@@ -36,6 +37,10 @@ class Text
 
   def self.map_barrier
     puts MAP_ERROR
+  end
+
+  def self.warning
+    puts WARNING
   end
 
   ###################

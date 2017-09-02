@@ -59,7 +59,7 @@ class Game
     if target && @current_room.content.key?(target)
       @current_room.content[target].send(command)
     else
-      Text::error
+      Text::warning
     end
   end
 
