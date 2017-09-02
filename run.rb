@@ -89,7 +89,6 @@ class Game
     when :help
       Text::help
     when :exit
-      Text::exit
       exit
     when nil
     else
