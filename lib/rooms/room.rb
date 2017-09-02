@@ -19,37 +19,42 @@ class Room
   private
 
   def get_content
-    [Monster, Potion, Sword].sample.new
+    {}
+    # [Monster, Potion, Sword].sample.new
   end
 end
 
 class Entrance < Room
   def to_s
-    Text::entrance
+    "You are in the entrance of the #{Text::DISCORAMA}"
+  end
+
+  def get_content
+    { jerry: Jerry.new }
   end
 end
 
 class MensBathroom < Room
   def to_s
-    Text::mensbathroom
+    ""
   end
 end
 
 class WomensBathroom < Room
   def to_s
-    Text::womensbathroom
+    ""
   end
 end
 
 class Dancefloor < Room
   def to_s
-    Text::dancefloor
+    ""
   end
 end
 
 class Lounge < Room
   def to_s
-    Text::lounge
+    ""
   end
 end
 
