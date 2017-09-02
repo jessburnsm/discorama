@@ -1,5 +1,7 @@
+# Load all game files
 Dir["lib/**.*", "lib/*/**.*"].each { |file| require_relative file }
 
+# Initializes and runs 'Drama at the Discorama'
 class Game
   def initialize
     @world = World.new
@@ -9,6 +11,7 @@ class Game
 
   private
 
+  # Begin the game and start the game loop
   def start_game
     begin
       Text::intro
@@ -25,6 +28,7 @@ class Game
     end
   end
 
+  # Attempt to interpret player's input as a command -> object concept
   def parse_player_input
     articles = ['a ', 'an ', 'the ', 'to ', 'go ', 'at ']
     regex = Regexp.union(articles)
@@ -35,6 +39,7 @@ class Game
     { command: (parsed[0].to_sym unless parsed[0].nil?), target: ( parsed[1].to_sym unless parsed[1].nil? ) }
   end
 
+  # Output player status
   def print_status
     puts ""
     puts @current_room
@@ -44,6 +49,12 @@ class Game
     # puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
   end
 
+  # Sends command to game object, if applicable
+  #
+  # ==== Attributes
+  #
+  # * +command+ - the action/method that will be sent to the object
+  # * +target+ - the game object that will receive the action
   def execute_interactive_action(command, target)
     if target && @current_room.content.key?(target)
       @current_room.content[target].send(command)
@@ -52,6 +63,13 @@ class Game
     end
   end
 
+  # Determine what action to take in the game, based on player input
+  #
+  # ==== Attributes
+  #
+  # * +action+ - hash in the format: {commmand, target}, where command is the action
+  # the user intends to take, and target is the game object upon which the command will
+  # be executed.
   def take_action(action)
     case action[:command]
     when :look, :talk, :take
