@@ -71,6 +71,7 @@ class Game
   # the user intends to take, and target is the game object upon which the command will
   # be executed.
   def take_action(action)
+    puts ""
     case action[:command]
     when :look, :talk, :take
       execute_interactive_action(action[:command], action[:target])
