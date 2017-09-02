@@ -42,6 +42,7 @@ class Text
 
   def self.warning
     puts WARNING
+    puts WARNING_SUB
   end
 
   ###################
