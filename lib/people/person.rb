@@ -7,9 +7,12 @@ class Person
   end
 
   def talk
+    puts @portrait
+    puts "Hey there! My name is #{@name}"
   end
 
   def take
+    puts "Forcibly abducting #{"HUMANS".yellow} is illegal. For now."
   end
 
   def look
@@ -36,20 +39,12 @@ class Jerry < Person
     File.open('portraits/jerry.txt').read
   end
 
-  def talk
-    puts @portrait
-    puts "Hey there! My name is #{@name}"
-  end
-
-  def take
-    puts "Yikes! You can't take Jerry!"
-  end
-
   def look
-    puts "How do you know #{@name}'s name is #{@name}? He happens to be wearing a HELLO MY NAME IS #{@name} tag. Nice."
+    puts "How do you know #{@name}'s name is #{@name}? He happens to be wearing a HELLO MY NAME IS '#{@name}' tag. It clashes with his outfit."
+    puts "#{"HUMANS".yellow} are strange, aren't they? Despite his poor fashion sense, he looks like a #{"NON-THREAT".yellow}."
   end
 
   def to_s
-    "A man named #{@name} is here. His lime green suit makes him easy to spot in the crowd."
+    "A man named #{@name} is in the crowd. His sequined suit is disrupting your optical sensors."
   end
 end

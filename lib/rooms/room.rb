@@ -26,7 +26,7 @@ end
 
 class Entrance < Room
   def to_s
-    "You are in the entrance of the #{Text::DISCORAMA}"
+    "You are in the entrance of the #{Text::DISCORAMA}. A number of #{"HUMANS".yellow} are here. There are no other robots."
   end
 
   def get_content
@@ -36,30 +36,30 @@ end
 
 class MensBathroom < Room
   def to_s
-    ""
+    "You are in the men's bathroom."
   end
 end
 
 class WomensBathroom < Room
   def to_s
-    ""
+    "You are in the women's bathroom."
   end
 end
 
 class Dancefloor < Room
   def to_s
-    ""
+    "You are at the dancefloor."
   end
 end
 
 class Lounge < Room
   def to_s
-    ""
+    "You are in the #{Text::DISCORAMA} lounge."
   end
 end
 
 class Bar < Room
   def to_s
-    Text::bar
+    "You are in the #{Text::DISCORAMA} bar."
   end
 end

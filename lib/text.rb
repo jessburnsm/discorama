@@ -22,6 +22,7 @@ class Text
   EXIT = "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green
   MAP_ERROR = "ERROR: PATH UNAVAILABLE".red
   WARNING = "WARNING: UNSPECIFIC COMMAND.".yellow
+  WARNING_SUB = "Someday robots may be able to pass through walls. Sadly, today is not that day."
 
   def self.error
     puts ERROR
@@ -31,12 +32,12 @@ class Text
     puts EXIT
   end
 
-  def self.prompt
-    print PROMPT
-  end
-
   def self.map_barrier
     puts MAP_ERROR
+  end
+
+  def self.prompt
+    print PROMPT
   end
 
   def self.warning
@@ -54,8 +55,9 @@ class Text
     puts "However, there's one place that robots haven't been able #{"DOMINATE".yellow} just yet: the dancefloor."
     puts "You are #{PLAYER_NAME} and you are ready to usher in a new era of #{"SUPERIOR DANCING ABILITY".yellow}."
     puts "You've come to the #{"GROOVIEST".yellow} club in the world to battle the greatest #{"HUMAN".yellow} dancers of this generation."
-    puts "By the end of the night you hope to show the #{"HUMANS".yellow} your #{"DANCING SUPREMACY".yellow.blink}"
+    puts "Through your #{"DANCING SUPREMACY".yellow} you hope to inspire hope the dancing future of all of robot-kind."
     puts "A neon sign guides the way..."
+    load 'portraits/discorama.rb'
   end
 
   ###################
