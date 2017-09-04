@@ -1,7 +1,8 @@
 require_relative './person'
+
 class Jerry < Person
   def set_name
-    "Jerry".light_magenta
+    "Jerry"
   end
 
   def set_portrait

@@ -2,8 +2,12 @@ class Person
   require 'colorize'
 
   def initialize
-    @name = set_name
+    @name = name
     @portrait = set_portrait
+  end
+
+  def name
+    @name ||= set_name.magenta
   end
 
   def talk
