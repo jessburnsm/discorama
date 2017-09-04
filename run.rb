@@ -19,28 +19,14 @@ class Game
       while @player.alive?
         @current_room = @world.get_room_of(@player)
         print_status
-        take_action(parse_player_input)
+        Text::prompt
+        take_action(InputParser::parse)
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       puts ""
       Text::exit
       exit
     end
-  end
-
-  # Attempt to interpret player's input as a command -> object concept
-  #
-  # ==== Returns
-  # * {command: :symbol, target: :symbol} - hash in which we have identified the command the user
-  # wants to execute on what world target. Target can be nil.
-  def parse_player_input
-    articles = ['a ', 'an ', 'the ', 'to ', 'go ', 'at ']
-    regex = Regexp.union(articles)
-
-    Text::prompt
-    parsed = gets.chomp.downcase.gsub(regex, '').split
-
-    { command: (parsed[0].to_sym unless parsed[0].nil?), target: ( parsed[1].to_sym unless parsed[1].nil? ) }
   end
 
   # Output player status and position in the world
