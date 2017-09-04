@@ -29,6 +29,10 @@ class Game
   end
 
   # Attempt to interpret player's input as a command -> object concept
+  #
+  # ==== Returns
+  # * {command: :symbol, target: :symbol} - hash in which we have identified the command the user
+  # wants to execute on what world target. Target can be nil.
   def parse_player_input
     articles = ['a ', 'an ', 'the ', 'to ', 'go ', 'at ']
     regex = Regexp.union(articles)
@@ -39,7 +43,9 @@ class Game
     { command: (parsed[0].to_sym unless parsed[0].nil?), target: ( parsed[1].to_sym unless parsed[1].nil? ) }
   end
 
-  # Output player status
+  # Output player status and position in the world
+  #
+  # ==== Returns string that describes player's position in the world
   def print_status
     puts ""
     puts @current_room
@@ -51,7 +57,7 @@ class Game
 
   # Sends command to game object, if applicable
   #
-  # ==== Attributes
+  # ==== Arguments
   #
   # * +command+ - the action/method that will be sent to the object
   # * +target+ - the game object that will receive the action
@@ -65,7 +71,7 @@ class Game
 
   # Determine what action to take in the game, based on player input
   #
-  # ==== Attributes
+  # ==== Arguments
   #
   # * +action+ - hash in the format: {commmand, target}, where command is the action
   # the user intends to take, and target is the game object upon which the command will
