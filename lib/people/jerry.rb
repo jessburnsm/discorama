@@ -1,3 +1,4 @@
+require_relative './person'
 class Jerry < Person
   def set_name
     "Jerry".light_magenta
