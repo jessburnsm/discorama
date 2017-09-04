@@ -1,3 +1,4 @@
+# Handles input parsing for game
 class InputParser
   # Regex that represents words that should be filtered from user input
   FILTER_ARTICLES = Regexp.union(['a ', 'an ', 'the ', 'to ', 'go ', 'at '])
