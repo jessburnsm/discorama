@@ -51,8 +51,6 @@ class ActionDirector
     end
   end
 
-  private
-
   # Determine if target is in room with player
   # Target should be non-nil and describe the key of an object in the room
   #
