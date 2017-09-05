@@ -24,7 +24,7 @@ end
 class Command::Look
   def execute(target, current_room)
     if target && current_room.has_target?(target)
-      current_room.content[target].send(:look)
+      current_room.get_target(target).look
     elsif target
       puts "CANNOT FIND TARGET"
     else
@@ -37,7 +37,7 @@ end
 class Command::Talk
   def execute(target, current_room)
     if target && current_room.has_target?(target)
-      current_room.content[target].send(:talk)
+      current_room.get_target(target).talk
     elsif target
       puts "CANNOT FIND TARGET"
     else

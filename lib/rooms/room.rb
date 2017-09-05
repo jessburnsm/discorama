@@ -20,6 +20,10 @@ class Room
     @content.key?(target)
   end
 
+  def get_target(target)
+    @content[target]
+  end
+
   private
 
   def get_content
