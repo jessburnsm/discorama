@@ -26,7 +26,7 @@ end
 
 class Entrance < Room
   def to_s
-    "You are in the entrance of the #{Text::DISCORAMA}. A number of #{"HUMANS".yellow} are here. There are no other robots."
+    "You are in the entrance of the #{GameText::DISCORAMA}. A number of #{"HUMANS".yellow} are here. There are no other robots."
   end
 
   def get_content
