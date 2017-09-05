@@ -1,4 +1,4 @@
-class Text
+class GameText
   require 'colorize'
 
   # COLOR OPTIONS
