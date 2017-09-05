@@ -26,7 +26,6 @@ class Game
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       @game_text.exit
-      exit
     end
   end
 end
