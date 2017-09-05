@@ -8,7 +8,7 @@ class InputParser
   # ==== Returns
   # * {command: :symbol, target: :symbol} - hash in which we have identified the command the user
   # wants to execute on what world target. Target can be nil.
-  def self.parse
+  def parse
     parsed = gets.chomp.downcase.gsub(FILTER_ARTICLES, '').split
     { command: (parsed[0].to_sym unless parsed[0].nil?), target: ( parsed[1].to_sym unless parsed[1].nil? ) }
   end

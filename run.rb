@@ -6,6 +6,7 @@ class Game
   def initialize
     @world = World.new
     @player = Player.new
+    @input_parser = InputParser.new
     start_game
   end
 
@@ -40,54 +41,51 @@ class Game
     end
     # puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
   end
-
-  # Sends command to game object, if applicable
-  #
-  # ==== Arguments
-  #
-  # * +command+ - the action/method that will be sent to the object
-  # * +target+ - the game object that will receive the action
-  def execute_interactive_action(command, target)
-    if target && @current_room.content.key?(target)
-      @current_room.content[target].send(command)
-    else
-      Text::warning
-    end
-  end
-
-  # Determine what action to take in the game, based on player input
-  #
-  # ==== Arguments
-  #
-  # * +action+ - hash in the format: {commmand, target}, where command is the action
-  # the user intends to take, and target is the game object upon which the command will
-  # be executed.
-  def take_action(action)
-    puts ""
-    case action[:command]
-    when :look, :talk, :take
-      execute_interactive_action(action[:command], action[:target])
-    when :north
-      @world.move_entity_north(@player)
-    when :east
-      @world.move_entity_east(@player)
-    when :south
-      @world.move_entity_south(@player)
-    when :west
-      @world.move_entity_west(@player)
-    # when :fight, :take
-    #   @current_room.interact(@player)
-    # when :status
-    #   @player.print_status
-    when :help
-      Text::help
-    when :exit
-      exit
-    when nil
-    else
-      Text::error
-    end
-  end
 end
+
+# class Command
+#   def self.get_command(user_input)
+#     case user_input
+#     when :north
+#       Command::Movement.new(:north)
+#     end
+#   end
+# end
+
+# class Command::Movement
+#   MOVE_MAPPING = {
+#     north: { y: -1, x: 0 },
+#     south: { y: 1, x: 0 }
+#   }
+
+#   def initialize(direction)
+#     @direction = direction
+#   end
+
+#   def execute(world, player)
+#     direction_changes = MOVE_MAPPING[@direction]
+#     next_room = world.get_room(player.current_room, direction_changes)
+#     player.current_room = next_room
+#   rescue InvalidMovement => e
+#     GameText.invalid_move
+#   end
+# end
+
+# class Command::Attack
+#   def execute(world, player)
+#   end
+# end
+
+# class Command::Talk
+#   def execute(world, player)
+#   end
+# end
+
+# class Command::Help
+#   def execute(*)
+#   end
+# end
+
+# command.execute(world, player)
 
 Game.new
