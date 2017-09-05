@@ -20,8 +20,8 @@ class Game
       while @player.alive?
         @current_room = @world.get_room_of(@player)
         print_status
-        take_action(InputParser::parse)
         GameText::prompt
+        ActionDirector.new(@world, @player).call(@input_parser.parse)
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       puts ""
