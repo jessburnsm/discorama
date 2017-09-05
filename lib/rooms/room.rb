@@ -5,23 +5,24 @@ class Room
     @content = get_content
   end
 
-  def interact(player)
-    if @content
-      @content.interact(player)
-      @content = nil
-    end
-  end
-
-  def to_s
-    "You are in a #{@size} room. It is #{@adjective}."
+  def get_target(target)
+    @content[target]
   end
 
   def has_target?(target)
     @content.key?(target)
   end
 
-  def get_target(target)
-    @content[target]
+  def look
+    puts "LOOK"
+  end
+
+  def talk
+    puts "TALK"
+  end
+
+  def to_s
+    "You are in a #{@size} room. It is #{@adjective}."
   end
 
   private
@@ -33,8 +34,16 @@ class Room
 end
 
 class Entrance < Room
+  def look
+    puts "The entrance of the DISCORAMA is..."
+  end
+
+  def talk
+    puts "You begin to chatter to yourself. The #{"HUMANS".yellow} look mildly concerned."
+  end
+
   def to_s
-    "You are in the entrance of the #{GameText::DISCORAMA}. A number of #{"HUMANS".yellow} are here. There are no other robots."
+    "You are in the entrance of the DISCORAMA. A number of #{"HUMANS".yellow} are here. There are no other robots."
   end
 
   def get_content
@@ -62,12 +71,12 @@ end
 
 class Lounge < Room
   def to_s
-    "You are in the #{Text::DISCORAMA} lounge."
+    "You are in the DISCORAMA lounge."
   end
 end
 
 class Bar < Room
   def to_s
-    "You are in the #{Text::DISCORAMA} bar."
+    "You are in the DISCORAMA bar."
   end
 end

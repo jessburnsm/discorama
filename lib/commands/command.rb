@@ -20,15 +20,21 @@ end
 class CommandNotFound < StandardError
 end
 
+# Generic error for when a target is not found
+# in our system
+class TargetNotFound < StandardError
+end
+
+
 # Responsible for execution of look command
 class Command::Look
   def execute(target, current_room)
     if target && current_room.has_target?(target)
       current_room.get_target(target).look
     elsif target
-      puts "CANNOT FIND TARGET"
+      raise TargetNotFound
     else
-      puts "LOOK AT ROOM"
+      current_room.look
     end
   end
 end
@@ -39,9 +45,9 @@ class Command::Talk
     if target && current_room.has_target?(target)
       current_room.get_target(target).talk
     elsif target
-      puts "CANNOT FIND TARGET"
+      raise TargetNotFound
     else
-      puts "TALK TO ROOM"
+      current_room.talk
     end
   end
 end
