@@ -1,3 +1,4 @@
+# Handles responsibility for formatting + output of general game text
 class GameText
   require 'colorize'
 
@@ -17,38 +18,40 @@ class GameText
   ##############################################
   PLAYER_NAME = "DANCEBOT 9000".green
   DISCORAMA = "DISC".magenta+ "-O-".green + "RAMA".magenta
-  PROMPT = "ENTER COMMAND: ".green
-  ERROR = "ERROR: COMMAND NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb".red
-  EXIT = "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green
-  MAP_ERROR = "ERROR: PATH UNAVAILABLE".red
-  MAP_ERROR_SUB = "Someday robots may be able to pass through walls. Sadly, today is not that day."
-  WARNING = "WARNING: UNSPECIFIC COMMAND.".yellow
 
-  def self.error
-    puts ERROR
+  def error
+    puts "ERROR: COMMAND NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb".red
   end
 
-  def self.exit
-    puts EXIT
+  def exit
+    puts "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green
   end
 
-  def self.map_barrier
-    puts MAP_ERROR
-    puts WARNING_SUB
+  def map_barrier
+    puts "ERROR: PATH UNAVAILABLE".red
+    puts "Someday robots may be able to pass through walls. Sadly, today is not that day."
   end
 
-  def self.prompt
-    print PROMPT
+  def action_prompt
+    print "ENTER COMMAND: ".green
   end
 
-  def self.warning
-    puts WARNING
+  def warning
+    puts "WARNING: UNSPECIFIC COMMAND.".yellow
+  end
+
+  def current_status(current_room)
+    puts ""
+    puts current_room
+    current_room.content.each do |key, content|
+      puts content
+    end
   end
 
   ###################
   ### Game Intro ###
   ##############################################
-  def self.intro
+  def intro
     system "clear"
     puts "INITIATING DANCEBOT_9000 PROCESS".green
     puts "The year is 3017."
@@ -64,8 +67,7 @@ class GameText
   ###################
   ### Help ###
   ##############################################
-  def self.help
-    puts ""
+  def help
     puts "GREETINGS #{PLAYER_NAME}"
     puts "OBJECTIVE: Battle #{"HUMANS".yellow} to become the #{"GREATEST DANCER ON EARTH".yellow}"
     puts "NAVIGATION: Use #{"north, east, south, or west".blue} to navigate the #{DISCORAMA}"

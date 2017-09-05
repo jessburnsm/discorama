@@ -7,6 +7,7 @@ class Game
     @world = World.new
     @player = Player.new
     @input_parser = InputParser.new
+    @game_text = GameText.new
     start_game
   end
 
@@ -15,31 +16,18 @@ class Game
   # Begin the game and start the game loop
   def start_game
     begin
-      GameText::intro
+      @game_text.intro
 
       while @player.alive?
         @current_room = @world.get_room_of(@player)
-        print_status
-        GameText::prompt
+        @game_text.current_status(@current_room)
+        @game_text.action_prompt
         ActionDirector.new(@world, @player).call(@input_parser.parse)
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
-      puts ""
-      GameText::exit
+      @game_text.exit
       exit
     end
-  end
-
-  # Output player status and position in the world
-  #
-  # ==== Returns string that describes player's position in the world
-  def print_status
-    puts ""
-    puts @current_room
-    @current_room.content.each do |key, content|
-      puts content
-    end
-    # puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
   end
 end
 

@@ -4,6 +4,7 @@ class ActionDirector
     @world = world
     @player = player
     @current_room = @world.get_room_of(@player)
+    @game_text = GameText.new
   end
 
   def call(action)
@@ -25,12 +26,12 @@ class ActionDirector
     # when :status
     #   @player.print_status
     when :help
-      GameText::help
+      @game_text.help
     when :exit
       exit
     when nil
     else
-      GameText::error
+      @game_text.error
     end
   end
 
@@ -46,7 +47,7 @@ class ActionDirector
     if target && @current_room.content.key?(target)
       @current_room.content[target].send(command)
     else
-      GameText::warning
+      @game_text.warning
     end
   end
 end
