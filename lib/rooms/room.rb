@@ -16,6 +16,10 @@ class Room
     "You are in a #{@size} room. It is #{@adjective}."
   end
 
+  def has_target?(target)
+    @content.key?(target)
+  end
+
   private
 
   def get_content
