@@ -11,7 +11,7 @@ class ActionDirector
     puts ""
     case action[:command]
     when :look, :talk, :take
-      execute_interactive_action(action[:command], action[:target])
+      execute(action[:command], action[:target])
     when :north
       @world.move_entity_north(@player)
       #@player.current_room = @world.get_room_from(@player.current_room, y: -1)
@@ -42,12 +42,24 @@ class ActionDirector
   # ==== Arguments
   #
   # * +command+ - the action/method that will be sent to the object
-  # * +target+ - the game object that will receive the action
-  def execute_interactive_action(command, target)
-    if target && @current_room.content.key?(target)
+  # * +target+ - the game object that will receive the action in question
+  def execute(command, target)
+    if target_valid?(target)
       @current_room.content[target].send(command)
     else
       @game_text.warning
     end
+  end
+
+  private
+
+  # Determine if target is in room with player
+  # Target should be non-nil and describe the key of an object in the room
+  #
+  # ==== Arguments
+  #
+  # * +target+ - the game object that will receive the action in question
+  def target_valid?(target)
+    target && @current_room.content.key?(target)
   end
 end
