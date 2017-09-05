@@ -15,17 +15,17 @@ class Game
   # Begin the game and start the game loop
   def start_game
     begin
-      Text::intro
+      GameText::intro
 
       while @player.alive?
         @current_room = @world.get_room_of(@player)
         print_status
-        Text::prompt
         take_action(InputParser::parse)
+        GameText::prompt
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       puts ""
-      Text::exit
+      GameText::exit
       exit
     end
   end
