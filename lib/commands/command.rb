@@ -80,7 +80,6 @@ class Command::Movement
   end
 
   def execute(target, current_room, world, player)
-    puts "MOVEMENT COMMAND #{@direction}"
     case @direction
     when :north
       world.move_entity_north(player)
