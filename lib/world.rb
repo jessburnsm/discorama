@@ -3,9 +3,10 @@ class World
   WORLD_HEIGHT = 2
 
   def initialize
+    @starting_room = Entrance.new
     @rooms =
     [ [ WomensBathroom.new, Lounge.new ],
-      [ Entrance.new, Dancefloor.new ],
+      [ @starting_room, Dancefloor.new ],
       [ MensBathroom.new, Bar.new ]]
   end
 
