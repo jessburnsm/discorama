@@ -11,7 +11,9 @@ class ActionDirector
     begin
       Command.get_command(action[:command]).execute(action[:target], @current_room)
     rescue CommandNotFound => message
-      @game_text.error(message)
+      @game_text.command_error(message)
+    rescue TargetNotFound
+      @game_text.target_error
     end
 
     # puts ""
