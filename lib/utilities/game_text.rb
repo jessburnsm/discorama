@@ -19,11 +19,16 @@ class GameText
   PLAYER_NAME = "DANCEBOT 9000".green
   DISCORAMA = "DISC".magenta+ "-O-".green + "RAMA".magenta
 
-  def error
-    puts "ERROR: COMMAND NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb".red
+  def command_error(command)
+    puts "ERROR: COMMAND '#{command.to_s.upcase}' NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb".red
+  end
+
+  def target_error
+    puts "ERROR: COULD NOT FIND SPECIFIED TARGET".red
   end
 
   def exit
+    puts ""
     puts "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green
   end
 
