@@ -19,6 +19,7 @@ class Game
       @game_text.intro
 
       while @player.alive?
+        @game_text.delimiter
         @current_room = @world.get_room_of(@player)
         @game_text.current_status(@current_room)
         @game_text.action_prompt
