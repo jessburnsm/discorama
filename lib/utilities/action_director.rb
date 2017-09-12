@@ -9,6 +9,7 @@ class ActionDirector
 
   def call(action)
     begin
+      system "clear"
       Command.get_command(action[:command]).execute(action[:target], @current_room, @world, @player)
     rescue CommandNotFound => message
       @game_text.command_error(message)
