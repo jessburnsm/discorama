@@ -35,7 +35,7 @@ class Command::Look
     if target && current_room.has_target?(target)
       current_room.get_target(target).look
     elsif target
-      raise TargetNotFound
+      raise TargetNotFound, target
     else
       current_room.look
     end
@@ -48,7 +48,7 @@ class Command::Talk
     if target && current_room.has_target?(target)
       current_room.get_target(target).talk
     elsif target
-      raise TargetNotFound
+      raise TargetNotFound, target
     else
       current_room.talk
     end
