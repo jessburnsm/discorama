@@ -1,6 +1,6 @@
 require 'colorize'
-puts "                                         _____________________________   "
-puts "                                        //                            \\ "
+puts "                                         ______________________________   "
+puts "                                        //                            \\\\ "
 puts "     _______________________________    || Weclome to the #{("DISC".magenta+ "-O-".green + "RAMA".magenta).blink} || "
 puts "    [=U=U=U=U=U=U=U=U=U=U=U=U=U=U=U=]   \\\\____________________________// "
 puts "    |  _________  __ __  _________  |                 | |                "
