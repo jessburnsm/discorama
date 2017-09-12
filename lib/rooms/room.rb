@@ -3,6 +3,7 @@ class Room
 
   def initialize
     @content = get_content
+    @game_text = GameText.new
   end
 
   def get_target(target)
