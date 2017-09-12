@@ -4,6 +4,7 @@ class Person
   def initialize
     @name = name
     @portrait = set_portrait
+    @game_text = GameText.new
   end
 
   def name
