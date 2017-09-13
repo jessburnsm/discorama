@@ -2,7 +2,7 @@ class Person
   require 'colorize'
 
   def initialize
-    @name = name
+    @name = set_name
     @portrait = set_portrait
     @game_text = GameText.new
     @talk_cycle = 0
@@ -13,7 +13,7 @@ class Person
   end
 
   def name
-    @name ||= set_name.magenta
+    @name.to_s.magenta
   end
 
   def talk
