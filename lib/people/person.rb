@@ -1,15 +1,26 @@
 class Person
   require 'colorize'
 
-  def initialize
+  def initialize(room = nil)
     @name = set_name
+    @room = room
     @portrait = set_portrait
     @game_text = GameText.new
     @talk_cycle = 0
   end
 
+  def reset_target_data(new_name)
+    @room.remove_content(key)
+    @name = "Ryo"
+    @room.add_content(set_target_data)
+  end
+
+  def key
+    name.uncolorize.downcase.to_sym
+  end
+
   def set_target_data
-    { name.uncolorize.downcase.to_sym => self }
+    { key => self }
   end
 
   def name

@@ -11,6 +11,10 @@ class Room
     @content = @content.merge(target)
   end
 
+  def remove_content(key)
+    @content.delete(key)
+  end
+
   def get_target(target)
     @content[target]
   end
