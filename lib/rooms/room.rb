@@ -2,8 +2,13 @@ class Room
   attr_accessor :size, :content
 
   def initialize
-    @content = get_content
+    @content = {}
+    @content = initialize_content
     @game_text = GameText.new
+  end
+
+  def add_content(target)
+    @content = @content.merge(target)
   end
 
   def get_target(target)
@@ -28,9 +33,8 @@ class Room
 
   private
 
-  def get_content
+  def initialize_content
     {}
-    # [Monster, Potion, Sword].sample.new
   end
 end
 

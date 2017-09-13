@@ -24,7 +24,7 @@ class Entrance < Room
     "You are in the entrance of the DISCORAMA. A number of #{@game_text.emphasis('humans')} are here. There are no other robots."
   end
 
-  def get_content
-    { jerry: Jerry.new }
+  def initialize_content
+    add_content(Jerry.new.set_target_data)
   end
 end

@@ -8,6 +8,10 @@ class Person
     @talk_cycle = 0
   end
 
+  def set_target_data
+    { name.uncolorize.downcase.to_sym => self }
+  end
+
   def name
     @name ||= set_name.magenta
   end
