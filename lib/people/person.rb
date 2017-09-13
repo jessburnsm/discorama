@@ -5,6 +5,7 @@ class Person
     @name = name
     @portrait = set_portrait
     @game_text = GameText.new
+    @talk_cycle = 0
   end
 
   def name

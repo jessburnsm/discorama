@@ -17,14 +17,25 @@ class Jerry < Person
   end
 
   def talk
-    puts @portrait
-    puts "#{@name}: 'Hey-o, fellow disc-o amig-o! Did you come out for the competition? I've never seen a robot compete before!'"
-    puts "#{@name}: 'I'm real glad you're here though -- it's time to show the #{@game_text.emphasis('elite feet')} some elite defeat!'"
-    puts ""
-    puts "The #{@game_text.emphasis('elite feet')} is a team of the best dancers in the world. They dominate the competition every year."
-    puts ""
-    puts "#{@name}: 'You're looking a little lost though, friend-o. Robots usually come with a #{@game_text.highlight('help')} command, right?'"
-    puts "#{@name}: 'Check back when you've got your bearings!'"
+    case @talk_cycle
+    when 0
+      puts @portrait
+      puts "#{@name}: 'Hey-o, fellow disc-o amig-o! Did you come out for the competition? I've never seen a robot compete before!'"
+      puts "#{@name}: 'I'm real glad you're here though -- it's time to show the #{@game_text.emphasis('elite feet')} some elite defeat!'"
+      puts ""
+      puts "The #{@game_text.emphasis('elite feet')} is a team of the best dancers in the world. They dominate the competition every year."
+      puts ""
+      puts "#{@name}: 'You're looking a little lost though, friend-o. Robots usually come with a #{@game_text.highlight('help')} command, right?'"
+      puts "#{@name}: 'Check back when you've got your bearings!'"
+    when 1
+      puts "THIS IS TALK CYCLE 2"
+    else
+      puts "#{@name} is busy dancing, despite not being on the dancefloor."
+      puts "Though the entrance of the club is dimly lit, the light that is present is reflecting obnoxiously off the sequins of #{@name}'s suit."
+      puts "You wonder briefly if robots can go blind."
+    end
+
+    @talk_cycle += 1
   end
 
   def to_s
