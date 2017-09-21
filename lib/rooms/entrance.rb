@@ -27,5 +27,6 @@ class Entrance < Room
   def initialize_content
     add_content(Jerry.new(self).set_target_data)
     add_content(Ryo.new(self).set_target_data)
+    add_content(Umbrella.new(self).set_target_data)
   end
 end
