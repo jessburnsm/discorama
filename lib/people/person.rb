@@ -11,7 +11,7 @@ class Person
 
   def reset_target_data(new_name)
     @room.remove_content(key)
-    @name = "Ryo"
+    @name = new_name
     @room.add_content(set_target_data)
   end
 
