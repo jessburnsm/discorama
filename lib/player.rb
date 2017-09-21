@@ -26,6 +26,15 @@ class Player
     end
   end
 
+  def has_item?(target)
+    @inventory.key?(target)
+  end
+
+  def use(target)
+    @inventory[target].execute_effect(self)
+    @inventory.delete(target)
+  end
+
   def alive?
     @hit_points > 0
   end

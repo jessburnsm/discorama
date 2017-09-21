@@ -24,6 +24,10 @@ class GameText
     puts "ERROR: OBJECT '#{target.to_s.upcase}' NOT FOUND (NameError)".red
   end
 
+  def item_error(item = '')
+    puts "ERROR: ITEM '#{item.to_s.upcase}' NOT FOUND (ImaginaryItemError)".red
+  end
+
   def exit
     puts ""
     puts "HALTING DANCEBOT_9000 PROCESS. HASTA LA VISTA.".green

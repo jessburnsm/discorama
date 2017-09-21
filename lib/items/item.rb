@@ -7,6 +7,9 @@ class Item
     @game_text = GameText.new
   end
 
+  def execute_effect(player)
+  end
+
   def key
     name.uncolorize.downcase.to_sym
   end
@@ -44,6 +47,12 @@ end
 class Umbrella < Item
   def set_name
     "umbrella"
+  end
+
+  def execute_effect(player)
+    puts "You twirl the #{name}. It has a soothing effect and you heal for +5."
+    puts "Alarmingly, the umbrella disintegrates right after."
+    player.heal(5)
   end
 
   def look

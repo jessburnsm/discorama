@@ -8,6 +8,11 @@ end
 class TargetNotFound < StandardError
 end
 
+# Generic error for when a target is not found
+# in our system
+class ItemNotFound < StandardError
+end
+
 # Responsible for instantiating correct command class
 # based on received user input
 class Command
@@ -25,6 +30,8 @@ class Command
       Command::Inventory.new
     when :status
       Command::Status.new
+    when :use
+      Command::Use.new
     when :help
       Command::Help.new
     when :exit
@@ -85,6 +92,18 @@ class Command::Status
     player.current_status
   end
 end
+
+# Responsible for execution of use command
+class Command::Use
+  def execute(target, current_room, world, player)
+    if target && player.has_item?(target)
+      player.use(target)
+    else target
+      raise ItemNotFound, target
+    end
+  end
+end
+
 # Responsible for execution of help command
 class Command::Help
   def execute(*)
