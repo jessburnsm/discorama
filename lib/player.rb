@@ -9,6 +9,7 @@ class Player
     @attack_power      = 1
     @x_coord, @y_coord = 1, 0 # Start player in entrance
     @inventory = {}
+    @game_text = GameText.new
     # @current_room = starting_room
   end
 
@@ -18,6 +19,7 @@ class Player
 
   def inventory
     puts "The following items are in your inventory:"
+    puts @game_text.error("ERROR: DANCEBOT_POCKETS.wmv RETURNED NULL VALUE") if @inventory.length == 0
     @inventory.each do |key, content|
       puts content.name
     end
