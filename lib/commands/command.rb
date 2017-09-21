@@ -19,6 +19,10 @@ class Command
       Command::Look.new
     when :talk
       Command::Talk.new
+    when :take
+      Command::Take.new
+    when :inventory
+      Command::Inventory.new
     when :help
       Command::Help.new
     when :exit
@@ -52,6 +56,24 @@ class Command::Talk
     else
       current_room.talk
     end
+  end
+end
+
+# Responsible for execution of take command
+class Command::Take
+  def execute(target, current_room, world, player)
+    if target && current_room.has_target?(target)
+      current_room.get_target(target).take(player)
+    else target
+      raise TargetNotFound, target
+    end
+  end
+end
+
+# Responsible for execution of inventory command
+class Command::Inventory
+  def execute(target, current_room, world, player)
+    player.inventory
   end
 end
 
