@@ -8,6 +8,19 @@ class Player
     @hit_points        = MAX_HIT_POINTS
     @attack_power      = 1
     @x_coord, @y_coord = 1, 0 # Start player in entrance
+    @inventory = {}
+    # @current_room = starting_room
+  end
+
+  def add_to_inventory(item)
+    @inventory = @inventory.merge(item.set_target_data)
+  end
+
+  def inventory
+    puts "The following items are in your inventory:"
+    @inventory.each do |key, content|
+      puts content.name
+    end
   end
 
   def alive?
