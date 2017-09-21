@@ -72,6 +72,10 @@ class GameText
     string.blue
   end
 
+  def error(string)
+    string.red
+  end
+
   ###################
   ### Game Intro ###
   ##############################################
