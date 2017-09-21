@@ -23,6 +23,8 @@ class Command
       Command::Take.new
     when :inventory
       Command::Inventory.new
+    when :status
+      Command::Status.new
     when :help
       Command::Help.new
     when :exit
@@ -77,6 +79,12 @@ class Command::Inventory
   end
 end
 
+# Responsible for execution of status command
+class Command::Status
+  def execute(target, current_room, world, player)
+    player.current_status
+  end
+end
 # Responsible for execution of help command
 class Command::Help
   def execute(*)

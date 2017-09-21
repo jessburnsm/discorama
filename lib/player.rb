@@ -1,12 +1,13 @@
 class Player
-  attr_accessor :hit_points, :attack_power
+  attr_accessor :hit_points, :morale
   attr_accessor :x_coord, :y_coord
 
   MAX_HIT_POINTS = 100
+  MAX_MORALE = 50
 
   def initialize
-    @hit_points        = MAX_HIT_POINTS
-    @attack_power      = 1
+    @hit_points = 50
+    @morale = MAX_MORALE
     @x_coord, @y_coord = 1, 0 # Start player in entrance
     @inventory = {}
     @game_text = GameText.new
@@ -38,10 +39,10 @@ class Player
     @hit_points = [@hit_points, MAX_HIT_POINTS].min
   end
 
-  def print_status
+  def current_status
     puts "*" * 80
     puts "HP: #{@hit_points}/#{MAX_HIT_POINTS}"
-    puts "AP: #{@attack_power}"
+    puts "SP: #{@morale}/#{MAX_MORALE}"
     puts "*" * 80
   end
 end
