@@ -49,9 +49,7 @@ class Player
   end
 
   def current_status
-    puts "*" * 80
     puts "HP: #{@hit_points}/#{MAX_HIT_POINTS}"
-    puts "SP: #{@morale}/#{MAX_MORALE}"
-    puts "*" * 80
+    puts "MP: #{@morale}/#{MAX_MORALE}"
   end
 end
