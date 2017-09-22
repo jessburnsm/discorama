@@ -14,7 +14,8 @@ This is a text adventure game built in Ruby and meant to be run in a console.
 To run locally:
 1. Pull the project
 2. `cd` into the project directory
-3. `ruby run.rb`
+3. `bundle install`
+4. `ruby run.rb`
 
 Game commands:
 1. `north`, `east`, `south`, `west`
@@ -22,4 +23,7 @@ Game commands:
 3. `look`
 4. `talk`
 5. `take`
-6. `exit`
+6. `inventory`
+7. `use`
+9. `status`
+10. `exit`
