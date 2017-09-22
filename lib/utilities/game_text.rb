@@ -105,6 +105,7 @@ class GameText
     puts ""
     puts "PRESS ENTER TO ENGAGE OPERATION DANCE BATTLE.".green
     gets
+    system "clear"
   end
 
   ###################
