@@ -36,7 +36,7 @@ class Ryo < Person
       puts ""
       puts "#{name}: I sEE."
       puts ""
-      puts "#{name} turns his attention back to the vending machine. Without another word."
+      puts "#{name} turns his attention back to the vending machine."
     else
       puts "#{name} is too busy with the vending machine to speak to you. Rude."
     end
