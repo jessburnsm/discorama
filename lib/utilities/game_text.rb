@@ -21,7 +21,7 @@ class GameText
   end
 
   def target_error(target = '')
-    puts "ERROR: OBJECT '#{target.to_s.upcase}' NOT FOUND (NameError)".red
+    puts "ERROR: OBJECT '#{target.to_s.upcase}' NOT FOUND (EnvironmentalHallucinationError)".red
   end
 
   def item_error(item = '')
