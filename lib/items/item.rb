@@ -19,7 +19,7 @@ class Item
   end
 
   def name
-    @name.to_s.magenta
+    @name.to_s.cyan
   end
 
   def talk
