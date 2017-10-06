@@ -1,0 +1,28 @@
+:look: |
+  The #{name} looks young enough to still receive an allowance. What's he doing in a place like this?
+
+:look_2: |
+  #{name} is still using the vending machine.
+  You wonder what the connection between #{@game_text.emphasis('sailors')} and capsule toys could be.
+
+:take: |
+  You reach out to grab his arm, but he dodges in a fluid movement, quickly returning to the vending machine without a word.
+  Huh?
+
+:talk: |
+  #{name}: HElLo, I'm #{name}. HOw are... YoU?
+  ...his speech sounds stilted and unnatural, even to a robot. Yikes.
+  #{name}: HEy. Do yOU hAppEn to KNOw wheRe #{@game_text.emphasis('sailors')} hang ouT?
+  You do not, in fact, know where #{@game_text.emphasis('sailors')} can be found.
+  You inform #{name} that the nearest open water is several hundred miles away.
+  #{name}: I sEE.
+  #{name} turns his attention back to the vending machine.
+
+:talk_2: |
+  #{name} is too busy with the vending machine to speak to you. Rude.
+
+:room_description: |
+  A young #{name} in a leather jacket is continuously feeding coins into a vending machine.
+
+:room_description_2: |
+  #{name} is still using the vending machine. Is he looking for a specific capsule toy, perhaps?

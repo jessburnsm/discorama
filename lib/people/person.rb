@@ -1,9 +1,11 @@
 class Person
   require 'colorize'
+  require 'yaml'
 
   def initialize(room = nil)
     @name = set_name
     @room = room
+    @dialog = set_dialog
     @portrait = set_portrait
     @game_text = GameText.new
     @talk_cycle = 0
@@ -27,26 +29,27 @@ class Person
     @name.to_s.magenta
   end
 
-  def talk
-    puts @portrait
-    puts "Hey there! My name is #{@name}"
-  end
-
-  def take
-    puts "Forcibly abducting #{"HUMANS".yellow} is illegal. For now."
+  def take(*)
+    puts eval("\"" + @dialog[:take] + "\"")
   end
 
   def look
+    puts eval("\"" + @dialog[:look] + "\"")
   end
 
-  def set_name
-    "DEFAULT"
-  end
+  def talk
+    puts @portrait
 
-  def set_portrait
-    "DEFAULT"
+    if @talk_cycle < 1
+      puts eval("\"" + @dialog[:talk] + "\"")
+    else
+      puts eval("\"" + @dialog[:talk_2] + "\"")
+    end
+    
+    @talk_cycle = @talk_cycle + 1
   end
 
   def to_s
+    eval("\"" + @dialog[:room_description] + "\"")
   end
 end

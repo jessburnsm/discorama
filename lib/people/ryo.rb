@@ -10,46 +10,36 @@ class Ryo < Person
     #File.open('portraits/jerry.txt').read
   end
 
+  def set_dialog
+    YAML.load_file('dialog/ryo.yml')
+  end
+
   def look
-    case @talk_cycle
-    when 0
-      puts "The #{name} looks young enough to still receive an allowance. What's he doing in a place like this?"
+    if @talk_cycle < 1
+      puts eval("\"" + @dialog[:look] + "\"")
     else
-      puts "#{name} is still using the vending machine."
-      puts "You wonder what the connection between #{@game_text.emphasis('sailors')} and capsule toys could be."
+      puts eval("\"" + @dialog[:look_2] + "\"")
     end
   end
 
   def talk
-    case @talk_cycle
-    when 0
-      # Reset name to Ryo
+    puts @portrait
+
+    if @talk_cycle < 1
       reset_target_data("Ryo")
-      puts "#{name}: HElLo, I'm #{name}. HOw are... YoU?"
-      puts ""
-      puts "...his speech sounds stilted and unnatural, even to a robot. Yikes."
-      puts ""
-      puts "#{name}: HEy. Do yOU hAppEn to KNOw wheRe #{@game_text.emphasis('sailors')} hang ouT?"
-      puts ""
-      puts "You do not, in fact, know where #{@game_text.emphasis('sailors')} can be found."
-      puts "You inform #{name} that the nearest open water is several hundred miles away."
-      puts ""
-      puts "#{name}: I sEE."
-      puts ""
-      puts "#{name} turns his attention back to the vending machine."
+      puts eval("\"" + @dialog[:talk] + "\"")
     else
-      puts "#{name} is too busy with the vending machine to speak to you. Rude."
+      puts eval("\"" + @dialog[:talk_2] + "\"")
     end
 
-    @talk_cycle += 1
+    @talk_cycle = @talk_cycle + 1
   end
 
   def to_s
-    case @talk_cycle
-    when 0
-      "A young #{name} in a leather jacket is continuously feeding coins into a vending machine."
+    if @talk_cycle < 1
+      eval("\"" + @dialog[:room_description] + "\"")
     else
-      "#{name} is still using the vending machine. Is he looking for a specific capsule toy, perhaps?"
+      eval("\"" + @dialog[:room_description_2] + "\"")
     end
   end
 end

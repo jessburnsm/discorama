@@ -1,0 +1,29 @@
+:look: |
+  It's clear that #{@name} is from a different era of robotics.
+  It was a time when #{@game_text.emphasis('humans')} thought that putting AI into everything was a good idea, even a tampon dispenser.
+
+:take: |
+  You attempt to free #{@name} from her bathroom prison. As you tug, you hear the groaning of metal, but
+  the unit doesn't budge.
+
+  You vow to return for her after the competition.
+
+:talk: |
+  You attempt to make a converstaion wi--
+  {@name}: GREETINGS PATRON WOULD YOU LIKE SOME HYGIENE.
+  You try to tell #{@name} that you don't need anything bu--
+  {@name}: PROCESSING REQUEST PARAMETERS. SANITIZING INPUT STRING.
+  You try to cancel the request and you--
+  {@name}: CURRENTLY PADDING WHITESPACE.
+  ...You resign yourself to the inevitable.
+  {@name}: HYGIENE COMPLETE.
+  A number of sanitary products are dispensed onto the bathroom floor.
+
+:talk_2: |
+  {@name}: ERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
+
+  The #{@game_text.emphasis('HYGIENE-O-MATIC')} makes
+
+
+:room_description: |
+  A #{@game_text.emphasis('HYGIENE-O-MATIC')} sits in the corner of the bathroom, humming softly. The word #{@name} is etched onto the front of her faceplate.
