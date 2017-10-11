@@ -17,6 +17,10 @@ class Person
     @room.add_content(set_target_data)
   end
 
+  def add_item_to_room(item_class)
+    @room.add_content(item_class.new(@room).set_target_data)
+  end
+
   def key
     name.uncolorize.downcase.to_sym
   end
@@ -45,7 +49,7 @@ class Person
     else
       puts eval("\"" + @dialog[:talk_2] + "\"")
     end
-    
+
     @talk_cycle = @talk_cycle + 1
   end
 
