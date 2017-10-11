@@ -17,6 +17,6 @@ class WomensBathroom < Room
   end
 
   def initialize_content
-    # add_content(Fannie.new(self).set_target_data)
+    add_content(Fannie.new(self).set_target_data)
   end
 end
