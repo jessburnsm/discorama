@@ -1,4 +1,5 @@
 require_relative './person'
+require_relative '../items/item'
 
 class Fannie < Person
   def set_name
@@ -9,17 +10,20 @@ class Fannie < Person
     File.open('portraits/fannie.txt').read
   end
 
-  def talk
-    puts @portrait
-    puts "You attempt to make a converstaion wi--"
-    puts "GREETINGS PATRON WOULD YOU LIKE SOME HYGIENE.".yellow
-    puts "You try to tell #{@name} that you don't need anything bu--"
-    puts "PROCESSING REQUEST PARAMETERS. SANITIZING INPUT STRING.".yellow
-    puts "You try to cancel the request and you--"
-    puts "CURRENTLY PADDING WHITESPACE.".yellow
-    puts "You resign yourself to the inevitable."
-    puts "REQUEST COMPLETE.".yellow
-    puts "A number of sanitary products are dispensed onto the bathroom floor."
+  def set_dialog
+    YAML.load_file('dialog/fannie.yml')
   end
 
+  def talk
+    puts @portrait
+
+    if @talk_cycle < 1
+      puts eval("\"" + @dialog[:talk] + "\"")
+      add_item_to_room(Umbrella)
+    else
+      puts eval("\"" + @dialog[:talk_2] + "\"")
+    end
+
+    @talk_cycle = @talk_cycle + 1
+  end
 end
