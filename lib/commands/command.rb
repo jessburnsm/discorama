@@ -155,8 +155,9 @@ class Command::Movement
 
   # Responsible for execution of battle command
   class Command::Battle
-    def execute(target, current_room, *)
+    def execute(target, current_room, world, player)
       if target && current_room.has_battle_target?(target)
+        player.in_battle = true
         current_room.get_target(target).battle
       else
         raise BattleNotFound, target

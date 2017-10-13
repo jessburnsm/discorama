@@ -47,6 +47,12 @@ class GameText
     print "ENTER COMMAND: ".green
   end
 
+  def battle_prompt
+    puts ""
+    puts "ENTER BATTLE COMMAND:".green
+    puts "( TAUNT, DANCE, ESCAPE ):".green
+  end
+
   def warning
     puts "WARNING: UNSPECIFIC COMMAND.".yellow
   end

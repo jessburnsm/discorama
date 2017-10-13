@@ -1,6 +1,7 @@
 class Player
   attr_accessor :hit_points, :morale
   attr_accessor :x_coord, :y_coord
+  attr_accessor :in_battle
 
   MAX_HIT_POINTS = 100
   MAX_MORALE = 50
@@ -11,6 +12,8 @@ class Player
     @x_coord, @y_coord = 1, 0 # Start player in entrance
     @inventory = {}
     @game_text = GameText.new
+    @in_battle = false
+    @opponent = nil
     # @current_room = starting_room
   end
 
@@ -33,6 +36,18 @@ class Player
   def use(target)
     @inventory[target].execute_effect(self)
     @inventory.delete(target)
+  end
+
+  def in_battle?
+    @in_battle
+  end
+
+  def set_opponent(opponent)
+    @opponent = opponent
+  end
+
+  def get_opponent
+    @opponent
   end
 
   def alive?
