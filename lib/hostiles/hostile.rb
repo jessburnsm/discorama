@@ -1,6 +1,6 @@
-require_relative '../people/person'
+require_relative '../utilities/actor'
 
-class Hostile < Person
+class Hostile < Actor
   MAX_HP = 100
   MAX_CP = 100
 
