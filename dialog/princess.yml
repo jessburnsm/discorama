@@ -1,0 +1,14 @@
+:look: |
+  Test look text for princess
+
+:take: |
+  Test take text for princess
+
+:talk: |
+  Test talk text for princess
+
+:talk_2: |
+  Test talk2 text for princess
+
+:room_description: |
+  Test room text for princess #{self.hp}, #{self.cp}

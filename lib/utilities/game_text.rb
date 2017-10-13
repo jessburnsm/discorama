@@ -24,6 +24,10 @@ class GameText
     puts "ERROR: OBJECT '#{target.to_s.upcase}' NOT FOUND (EnvironmentalHallucinationError)".red
   end
 
+  def battle_error(target = '')
+    puts "ERROR: 404 DANCE BATTLE NOT FOUND".red
+  end
+
   def item_error(item = '')
     puts "ERROR: ITEM '#{item.to_s.upcase}' NOT FOUND (ImaginaryItemError)".red
   end

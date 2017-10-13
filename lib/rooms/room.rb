@@ -23,6 +23,10 @@ class Room
     @content.key?(target)
   end
 
+  def has_battle_target?(target)
+    has_target?(target) && @content[target].is_hostile?
+  end
+
   def look
     puts "LOOK"
   end

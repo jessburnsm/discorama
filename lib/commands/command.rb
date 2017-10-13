@@ -8,6 +8,11 @@ end
 class TargetNotFound < StandardError
 end
 
+# Generic error for when a battle target is not found
+# in our system
+class BattleNotFound < StandardError
+end
+
 # Generic error for when a target is not found
 # in our system
 class ItemNotFound < StandardError
@@ -36,6 +41,8 @@ class Command
       Command::Help.new
     when :exit
       Command::Exit.new
+    when :battle
+      Command::Battle.new
     else
       raise CommandNotFound, user_input
     end
@@ -144,5 +151,16 @@ class Command::Movement
   #   player.current_room = next_room
   # rescue InvalidMovement => e
   #   GameText.invalid_move
+  end
+
+  # Responsible for execution of battle command
+  class Command::Battle
+    def execute(target, current_room, *)
+      if target && current_room.has_battle_target?(target)
+        current_room.get_target(target).battle
+      else
+        raise BattleNotFound, target
+      end
+    end
   end
 end

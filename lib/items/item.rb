@@ -23,6 +23,10 @@ class Item
     @name.to_s.cyan
   end
 
+  def is_hostile?
+    false
+  end
+
   def look
     puts eval("\"" + @dialog[:look] + "\"")
   end

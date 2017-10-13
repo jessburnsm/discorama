@@ -17,6 +17,8 @@ class ActionDirector
       @game_text.target_error(message)
     rescue ItemNotFound => message
       @game_text.item_error(message)
+    rescue BattleNotFound => message
+      @game_text.battle_error(message)
     end
   end
 end

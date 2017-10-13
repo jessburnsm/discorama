@@ -33,6 +33,10 @@ class Person
     @name.to_s.magenta
   end
 
+  def is_hostile?
+    false
+  end
+
   def take(*)
     puts eval("\"" + @dialog[:take] + "\"")
   end
