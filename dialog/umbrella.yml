@@ -1,0 +1,18 @@
+:look: |
+  The #{name} is polka-dotted.
+  It appears to have been abandoned, as there hasn't been rain in New Atlanta for days.
+  Looking at the pattern of the #{name} puts you at ease. Odd.
+
+:talk: |
+  You attempt to strike up a conversation with the #{name} but it doesn't seem to be responsive.
+  You take mild offense to this development.
+
+:take: |
+  You take the #{name}.
+
+:execute: |
+  You twirl the #{name}. It has a soothing effect and you heal for +5.
+  Alarmingly, the umbrella disintegrates right after.
+
+:room_description: |
+  There is an #{name} propped up against the far wall of the room.
