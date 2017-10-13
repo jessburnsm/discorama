@@ -3,6 +3,9 @@ require_relative '../utilities/actor'
 class Person < Actor
   def initialize(room = nil)
     super(room)
+
+    # Talk cycle keeps track of how many times the player
+    # has used the talk command on this person
     @talk_cycle = 0
   end
 
@@ -12,12 +15,15 @@ class Person < Actor
 
   def talk
     #puts @portrait
-    if @talk_cycle < 1
-      puts eval("\"" + @dialog[:talk] + "\"")
-    else
-      puts eval("\"" + @dialog[:talk_2] + "\"")
-    end
-
+    @talk_cycle < 1 ? talk_cycle_1 : talk_cycle_2
     @talk_cycle = @talk_cycle + 1
+  end
+
+  def talk_cycle_1
+    puts eval("\"" + @dialog[:talk] + "\"")
+  end
+
+  def talk_cycle_2
+    puts eval("\"" + @dialog[:talk_2] + "\"")
   end
 end
