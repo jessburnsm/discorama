@@ -23,25 +23,25 @@ end
 class Command
   def self.get_command(user_input)
     case user_input
-    when :north, :east, :south, :west
+    when :north, :east, :south, :west, :n, :e, :s, :w
       Command::Movement.new(user_input)
-    when :look
+    when :look, :l
       Command::Look.new
-    when :talk
+    when :talk, :tal
       Command::Talk.new
-    when :take
+    when :take, :tak
       Command::Take.new
-    when :inventory
+    when :inventory, :i
       Command::Inventory.new
-    when :status
+    when :status, :s
       Command::Status.new
-    when :use
+    when :use, :u
       Command::Use.new
-    when :help
+    when :help, :h
       Command::Help.new
-    when :exit
+    when :exit, :e
       Command::Exit.new
-    when :battle
+    when :battle, :b
       Command::Battle.new
     else
       raise CommandNotFound, user_input
