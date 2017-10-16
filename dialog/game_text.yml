@@ -1,0 +1,41 @@
+:battle_error: "ERROR: HOSTILE ENTITY '#{target.to_s.upcase}' NOT FOUND"
+:battle_prompt: "\nENTER BATTLE COMMAND ( TAUNT, DANCE, ESCAPE ): "
+:command_error: "ERROR: COMMAND '#{command.to_s.upcase}' NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb (NoMethodError)"
+:delimiter: "\n----------------------------------\n\n"
+:discorama: "The #{'DISC'.magenta}#{'-O-'.green}#{'RAMA'.magenta}"
+:exit: "\nHALTING #{@player} PROCESS. HASTA LA VISTA TINY DANCER.\n"
+:game_intro: |
+  The year: 3017.
+  The location: New Atlanta's hottest club, #{discorama}.
+  The mission: Win #{emphasis('THE DISC-O-RAMA DANCE BATTLE 3017 MASTERS CHAMPIONSHIP')} competition.
+
+  It's time to prove your #{emphasis('DANCING SUPERIORITY')}! A neon sign guides the way...
+:game_prompt: "INITIATING DANCEBOT_9000 PROCESS... COMPLETE. PRESS ENTER TO BOOT."
+:game_start: "\nPRESS ENTER TO ENGAGE OPERATION DANCE BATTLE."
+:help: |
+  #{information('BOOTING DANCEBOT_9000_PLS_HELP.flv')}
+  
+  ---------------------------------------------------
+  Greetings #{@player},
+
+  I wonder if this documentation finds you well?
+  I do hope that you will put forth a great effort to win this year's illustrious
+  #{emphasis('DISC-O-RAMA DANCE BATTLE MASTERS CHAMPIONSHIP')}, an honor I could not achieve myself.
+  (Oh, the ravages of time!)
+
+  Please remember that I have refactored your navigation module into four easy commands: #{highlight('north, east, south, west')}.
+  You may also find #{highlight('look')}, #{highlight('talk')}, and #{highlight('take')} to be brillantly useful for interacting with others.
+  If you find yourself needing to take a tea break or the like, do use #{highlight('exit')} to 'bow' out of the competition.
+  (I do amuse myself with such wordplay!)
+
+  In good health and happy feet,
+  Your friend,
+
+  #{emphasis('the professor')}
+  ---------------------------------------------------
+:item_error: "ERROR: ITEM '#{item.to_s.upcase}' NOT FOUND (ImaginaryItemError)"
+:name: DANCEBOT_9000
+:path_error: "ERROR: 404 PATH NOT FOUND. WOULD YOU LIKE TO TRY A DIFFERENT DIRECTION?"
+:prompt: "\nENTER COMMAND: "
+:target_error: "ERROR: OBJECT '#{target.to_s.upcase}' NOT FOUND (EnvironmentalHallucinationError)"
+:warning: "WARNING: NONSPECIFIC COMMAND. ADDITIONAL DIRECTIVE REQUIRED."
