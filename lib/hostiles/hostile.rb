@@ -10,6 +10,10 @@ class Hostile < Actor
     @cp = self.class::MAX_CP
   end
 
+  def name
+    @name.to_s.cyan
+  end
+
   def is_hostile?
     true
   end
