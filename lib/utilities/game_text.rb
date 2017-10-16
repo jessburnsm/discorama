@@ -61,6 +61,10 @@ class GameText
     puts error(eval("\"" + @text[:command_error] + "\""))
   end
 
+  def inventory_error
+    puts error(eval("\"" + @text[:inventory_error] + "\""))
+  end
+
   def item_error(item = '')
     puts error(eval("\"" + @text[:item_error] + "\""))
   end
@@ -95,13 +99,17 @@ class GameText
     output(information(@text[:exit]))
   end
 
+  def inventory_list
+    output(information(@text[:inventory]))
+  end
+
   ######################################
   # Other
   ######################################
   def help
     output(@text[:help])
   end
-  
+
   def intro
     system "clear"
     output(information(@text[:game_prompt]))

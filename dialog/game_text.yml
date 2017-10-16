@@ -33,6 +33,8 @@
 
   #{emphasis('the professor')}
   ---------------------------------------------------
+:inventory: "BOOTING DANCEBOT_POCKETS.wmv\n"
+:inventory_error: "ERROR: DANCEBOT_POCKETS.wmv RETURNED NULL VALUE"
 :item_error: "ERROR: ITEM '#{item.to_s.upcase}' NOT FOUND (ImaginaryItemError)"
 :name: DANCEBOT_9000
 :path_error: "ERROR: 404 PATH NOT FOUND. WOULD YOU LIKE TO TRY A DIFFERENT DIRECTION?"

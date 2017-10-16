@@ -1,41 +1,83 @@
 class Player
-  attr_accessor :hit_points, :morale
   attr_accessor :x_coord, :y_coord
-  attr_accessor :in_battle
 
-  MAX_HIT_POINTS = 100
-  MAX_MORALE = 50
+  MAX_HP = 100
+  MAX_CP = 50
+
+  DEFAULT_DANCE_SKILL = 0
+  DEFAULT_TAUNT_SKILL = 0
+  DEFAULT_RALLY_SKILL = 0
 
   def initialize
-    @hit_points = 50
-    @morale = MAX_MORALE
-    @x_coord, @y_coord = 1, 0 # Start player in entrance
-    @inventory = {}
     @game_text = GameText.new
+
+    # Starting position
+    @x_coord, @y_coord = 1, 0
+
+    # Starting stats
+    @hp = MAX_HP
+    @cool = MAX_CP
+    @dance_skill = DEFAULT_DANCE_SKILL
+    @taunt_skill = DEFAULT_TAUNT_SKILL
+    @rally_skill = DEFAULT_RALLY_SKILL
+
+    # Battle variables
     @in_battle = false
     @opponent = nil
-    # @current_room = starting_room
+
+    @inventory = {}
   end
 
+  def current_status
+    puts "HP: #{@hp}/#{MAX_HP}"
+    puts "CP: #{@cool}/#{MAX_CP}"
+    puts "DANCE LVL: #{@dance_skill}"
+    puts "TAUNT LVL: #{@taunt_skill}"
+    puts "RALLY LVL: #{@rally_skill}"
+  end
+
+  ######################################
+  # Inventory
+  ######################################
   def add_to_inventory(item)
     @inventory = @inventory.merge(item.set_target_data)
-  end
-
-  def inventory
-    puts "The following items are in your inventory:"
-    puts @game_text.error("ERROR: DANCEBOT_POCKETS.wmv RETURNED NULL VALUE") if @inventory.length == 0
-    @inventory.each do |key, content|
-      puts content.name
-    end
   end
 
   def has_item?(target)
     @inventory.key?(target)
   end
 
+  def inventory
+    @game_text.inventory_list
+    @game_text.inventory_error if @inventory.length == 0
+    @inventory.each do |key, content|
+      puts content.name
+    end
+  end
+
   def use(target)
     @inventory[target].execute_effect(self)
     @inventory.delete(target)
+  end
+
+  ######################################
+  # Battle
+  ######################################
+  def alive?
+    @hp > 0
+  end
+
+  def get_opponent
+    @opponent
+  end
+
+  def heal(amount)
+    @hp += amount
+    @hp = [@hp, MAX_HP].min
+  end
+
+  def hurt(amount)
+    @hp -= amount
   end
 
   def in_battle?
@@ -44,27 +86,5 @@ class Player
 
   def set_opponent(opponent)
     @opponent = opponent
-  end
-
-  def get_opponent
-    @opponent
-  end
-
-  def alive?
-    @hit_points > 0
-  end
-
-  def hurt(amount)
-    @hit_points -= amount
-  end
-
-  def heal(amount)
-    @hit_points += amount
-    @hit_points = [@hit_points, MAX_HIT_POINTS].min
-  end
-
-  def current_status
-    puts "HP: #{@hit_points}/#{MAX_HIT_POINTS}"
-    puts "MP: #{@morale}/#{MAX_MORALE}"
   end
 end
