@@ -19,16 +19,15 @@ class Game
       @game_text.intro
 
       while @player.alive?
-        @game_text.delimiter
-        @current_room = @world.get_room_of(@player)
-        @game_text.current_status(@current_room)
-        @game_text.action_prompt
-        ActionDirector.new(@world, @player).call(@input_parser.parse)
-
-        # If the player is battling, enter the battle loop
-        while @player.in_battle?
+        if @player.in_battle?
           @game_text.battle_prompt
           BattleDirector.new(@player).call(@input_parser.parse)
+        else
+          @game_text.delimiter
+          @current_room = @world.get_room_of(@player)
+          @game_text.current_status(@current_room)
+          @game_text.action_prompt
+          ActionDirector.new(@world, @player).call(@input_parser.parse)
         end
       end
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
