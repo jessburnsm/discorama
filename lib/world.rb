@@ -49,6 +49,6 @@ class World
   private
 
   def world_barrier
-    puts GameText.new.map_barrier
+    puts GameText.new.map_error
   end
 end
