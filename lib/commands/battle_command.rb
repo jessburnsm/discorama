@@ -8,11 +8,13 @@ end
 class BattleCommand
   def self.get_command(user_input)
     case user_input
-    when :dance
+    when :dance, :d
       BattleCommand::Dance.new
-    when :taunt
+    when :taunt, :t
       BattleCommand::Taunt.new
-    when :escape
+    when :rally, :r
+      BattleCommand::Rally.new
+    when :escape, :e
       BattleCommand::Escape.new
     else
       raise BattleCommandNotFound, user_input
@@ -27,10 +29,17 @@ class BattleCommand::Taunt
   end
 end
 
-# Responsible for execution of taunt command
+# Responsible for execution of dance command
 class BattleCommand::Dance
   def execute(player, opponent)
     puts "dance placeholder"
+  end
+end
+
+# Responsible for execution of rally command
+class BattleCommand::Rally
+  def execute(player, opponent)
+    puts "rally placeholder"
   end
 end
 
