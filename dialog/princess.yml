@@ -1,3 +1,9 @@
+:battle_start: |
+  #{name}: Ready to fight me, chump?
+
+:battle_start_2: |
+  #{name}: Didn't get enough last time, buddy? You're going down!
+
 :look: |
   Test look text for princess
 
@@ -11,4 +17,4 @@
   Test talk2 text for princess
 
 :room_description: |
-  Test room text for princess #{self.hp}, #{self.cp}
+  Test room text for princess

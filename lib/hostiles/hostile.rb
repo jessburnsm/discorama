@@ -28,7 +28,7 @@ class Hostile < Actor
   end
 
   def name
-    @name.to_s.cyan
+    @name.to_s.red
   end
 
   def is_hostile?
@@ -36,7 +36,16 @@ class Hostile < Actor
   end
 
   def init_battle
-    puts "battle opening line"
+    @battle_cycle < 1 ? battle_cycle_1 : battle_cycle_2
+    @battle_cycle = @battle_cycle + 1
+  end
+
+  def battle_cycle_1
+    puts eval("\"" + @dialog[:battle_start] + "\"")
+  end
+
+  def battle_cycle_2
+    puts eval("\"" + @dialog[:battle_start_2] + "\"")
   end
 
   def battle
