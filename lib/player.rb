@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :x_coord, :y_coord, :in_battle
+  attr_accessor :x_coord, :y_coord, :in_battle, :dance_skill, :taunt_skill, :rally_skill
 
   MAX_HP = 100
   MAX_CP = 50
@@ -16,7 +16,7 @@ class Player
 
     # Starting stats
     @hp = MAX_HP
-    @cool = MAX_CP
+    @cp = MAX_CP
     @dance_skill = DEFAULT_DANCE_SKILL
     @taunt_skill = DEFAULT_TAUNT_SKILL
     @rally_skill = DEFAULT_RALLY_SKILL
@@ -29,8 +29,11 @@ class Player
   end
 
   def current_status
+    puts
+    puts @game_text.information(@game_text.player + " SYSTEM STATUS")
+    puts @game_text.warning("WARNING: CRITICAL DANCE FAILURE IMMINENT.") if in_danger?
     puts "HP: #{@hp}/#{MAX_HP}"
-    puts "CP: #{@cool}/#{MAX_CP}"
+    puts "CP: #{@cp}/#{MAX_CP}"
     puts "DANCE LVL: #{@dance_skill}"
     puts "TAUNT LVL: #{@taunt_skill}"
     puts "RALLY LVL: #{@rally_skill}"
@@ -64,7 +67,7 @@ class Player
   # Battle
   ######################################
   def alive?
-    @hp > 0
+    @hp > 0 && @cp > 0
   end
 
   def get_opponent
@@ -82,6 +85,10 @@ class Player
 
   def in_battle?
     @in_battle
+  end
+
+  def in_danger?
+    @hp < 10 || @cp < 10
   end
 
   def set_opponent(opponent)
