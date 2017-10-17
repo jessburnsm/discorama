@@ -46,6 +46,10 @@ class GameText
     string.green
   end
 
+  def player
+    @player
+  end
+
   def warning(string)
     string.yellow
   end
