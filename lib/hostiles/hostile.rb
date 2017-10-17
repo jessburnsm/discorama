@@ -79,7 +79,6 @@ class Hostile < Actor
     return defeat if !alive?
     # Choose action
     puts "opponent takes turn"
-    current_status
   end
 end
 

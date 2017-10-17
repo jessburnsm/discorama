@@ -8,6 +8,7 @@ class BattleDirector
 
   def execute_opponent_turn
     @opponent.battle
+    @opponent.current_status
     @player.current_status
   end
 
