@@ -1,6 +1,8 @@
 require_relative '../utilities/actor'
 
 class Hostile < Actor
+  attr_accessor :dance_skill, :taunt_skill, :rally_skill
+
   MAX_HP = 100
   MAX_CP = 100
   DANCE_SKILL = 1
@@ -48,10 +50,36 @@ class Hostile < Actor
     puts eval("\"" + @dialog[:battle_start_2] + "\"")
   end
 
+  def alive?
+    @hp > 0 && @cp > 0
+  end
+
+  def hurt(amount)
+    @hp = @hp - amount
+    puts "#{name} was wounded and took #{amount} physical damage."
+  end
+
+  def insult(amount)
+    @cp = @cp - amount
+    puts "#{name} spirit was broken and took #{amount} reputation damage."
+  end
+
+  def current_status
+    puts
+    puts @game_text.error(name + " status")
+    puts "HP: #{@hp}/#{MAX_HP}"
+    puts "CP: #{@cp}/#{MAX_CP}"
+  end
+
+  def defeat
+    puts "opponent defeated!"
+  end
+
   def battle
-    puts "check if opponent is dead"
+    return defeat if !alive?
     # Choose action
     puts "opponent takes turn"
+    current_status
   end
 end
 
