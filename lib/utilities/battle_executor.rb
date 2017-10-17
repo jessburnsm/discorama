@@ -32,9 +32,9 @@ class BattleExecutor
       when 2
         puts "Taunt boost"
       when 3
-        puts "hp increase"
+        @entity.heal(diceroll(DAMAGE_DIE))
       when 4
-        puts "cp increase"
+        @entity.morale_boost(diceroll(DAMAGE_DIE))
       end
     else
       puts "Rally was not successful"
