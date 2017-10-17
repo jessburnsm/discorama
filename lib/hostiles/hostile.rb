@@ -37,9 +37,17 @@ class Hostile < Actor
     true
   end
 
-  def init_battle
-    @battle_cycle < 1 ? battle_cycle_1 : battle_cycle_2
-    @battle_cycle = @battle_cycle + 1
+  ######################################
+  # Battle
+  ######################################
+  def alive?
+    @hp > 0 && @cp > 0
+  end
+
+  def battle
+    return defeat if !alive?
+    # Choose action
+    puts "opponent takes turn"
   end
 
   def battle_cycle_1
@@ -48,20 +56,6 @@ class Hostile < Actor
 
   def battle_cycle_2
     puts eval("\"" + @dialog[:battle_start_2] + "\"")
-  end
-
-  def alive?
-    @hp > 0 && @cp > 0
-  end
-
-  def hurt(amount)
-    @hp = @hp - amount
-    puts "#{name} was wounded and took #{amount} physical damage."
-  end
-
-  def insult(amount)
-    @cp = @cp - amount
-    puts "#{name} spirit was broken and took #{amount} reputation damage."
   end
 
   def current_status
@@ -75,10 +69,31 @@ class Hostile < Actor
     puts "opponent defeated!"
   end
 
-  def battle
-    return defeat if !alive?
-    # Choose action
-    puts "opponent takes turn"
+  def heal(amount)
+    @hp += amount
+    @hp = [@hp, MAX_HP].min
+    puts "#{name} has gained #{amount} hp!"
+  end
+
+  def hurt(amount)
+    @hp -= amount
+    puts "#{name} was wounded and took #{amount} physical damage."
+  end
+
+  def init_battle
+    @battle_cycle < 1 ? battle_cycle_1 : battle_cycle_2
+    @battle_cycle = @battle_cycle + 1
+  end
+
+  def insult(amount)
+    @cp -= amount
+    puts "#{name} spirit was broken and took #{amount} reputation damage."
+  end
+
+  def morale_boost(amount)
+    @cp += amount
+    @cp = [@cp, MAX_CP].min
+    puts "#{name} has gained #{amount} cp!"
   end
 end
 
