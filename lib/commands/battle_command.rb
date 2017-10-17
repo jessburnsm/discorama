@@ -25,21 +25,21 @@ end
 # Responsible for execution of taunt command
 class BattleCommand::Taunt
   def execute(player, opponent)
-    puts "taunt placeholder"
+    BattleExecutor.new(player, opponent).taunt
   end
 end
 
 # Responsible for execution of dance command
 class BattleCommand::Dance
   def execute(player, opponent)
-    puts "dance placeholder"
+    BattleExecutor.new(player, opponent).dance
   end
 end
 
 # Responsible for execution of rally command
 class BattleCommand::Rally
   def execute(player, opponent)
-    puts "rally placeholder"
+    BattleExecutor.new(player, opponent).rally
   end
 end
 
