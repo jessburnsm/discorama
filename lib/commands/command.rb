@@ -33,7 +33,7 @@ class Command
       Command::Take.new
     when :inventory, :i
       Command::Inventory.new
-    when :status, :s
+    when :status, :st
       Command::Status.new
     when :use, :u
       Command::Use.new
@@ -137,13 +137,13 @@ class Command::Movement
 
   def execute(target, current_room, world, player)
     case @direction
-    when :north
+    when :north, :n
       world.move_entity_north(player)
-    when :east
+    when :east, :e
       world.move_entity_east(player)
-    when :west
+    when :west, :w
       world.move_entity_west(player)
-    when :south
+    when :south, :s
       world.move_entity_south(player)
     end
   #   direction_changes = MOVE_MAPPING[@direction]
