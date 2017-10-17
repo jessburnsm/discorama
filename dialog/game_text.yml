@@ -1,5 +1,5 @@
 :battle_error: "ERROR: HOSTILE ENTITY '#{target.to_s.upcase}' NOT FOUND"
-:battle_prompt: "\nENTER BATTLE COMMAND ( (D)ANCE, (T)AUNT, (R)ALLY,  (E)SCAPE ): "
+:battle_prompt: "\nENTER BATTLE COMMAND [ (D)ANCE, (T)AUNT, (R)ALLY, (E)SCAPE ]: "
 :command_error: "ERROR: COMMAND '#{command.to_s.upcase}' NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb (NoMethodError)"
 :delimiter: "\n----------------------------------\n\n"
 :discorama: "The #{'DISC'.magenta}#{'-O-'.green}#{'RAMA'.magenta}"
