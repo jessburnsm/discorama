@@ -20,6 +20,7 @@ class Game
 
       while @player.alive?
         if @player.in_battle?
+          BattleDirector.new(@player).execute_opponent_turn
           @game_text.battle_prompt
           BattleDirector.new(@player).call(@input_parser.parse)
         else

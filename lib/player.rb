@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :x_coord, :y_coord
+  attr_accessor :x_coord, :y_coord, :in_battle
 
   MAX_HP = 100
   MAX_CP = 50

@@ -158,7 +158,8 @@ class Command::Movement
     def execute(target, current_room, world, player)
       if target && current_room.has_battle_target?(target)
         player.in_battle = true
-        current_room.get_target(target).battle
+        player.set_opponent(current_room.get_target(target))
+        player.get_opponent.init_battle
       else
         raise BattleNotFound, target
       end

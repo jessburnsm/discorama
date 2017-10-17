@@ -18,8 +18,14 @@ class Hostile < Actor
     true
   end
 
+  def init_battle
+    puts "battle opening line"
+  end
+
   def battle
-    puts "battle placeholder"
+    puts "check if opponent is dead"
+    # Choose action
+    puts "opponent takes turn"
   end
 end
 

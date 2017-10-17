@@ -6,6 +6,10 @@ class BattleDirector
     @game_text = GameText.new
   end
 
+  def execute_opponent_turn
+    @opponent.battle
+  end
+
   def call(action)
     begin
       system "clear"
