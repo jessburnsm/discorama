@@ -77,10 +77,17 @@ class Player
   def heal(amount)
     @hp += amount
     @hp = [@hp, MAX_HP].min
+    puts "DANCEBOT_9000 has gained #{amount} hp!"
   end
 
   def hurt(amount)
     @hp -= amount
+    puts "DANCEBOT_9000 was wounded"
+  end
+
+  def insult(amount)
+    @cp -= amount
+    puts "#{name} spirit was broken and took #{amount} reputation damage."
   end
 
   def in_battle?
@@ -89,6 +96,12 @@ class Player
 
   def in_danger?
     @hp < 10 || @cp < 10
+  end
+
+  def morale_boost(amount)
+    @cp += amount
+    @cp = [@cp, MAX_CP].min
+    puts "DANCEBOT_9000 has gained #{amount} cp!"
   end
 
   def set_opponent(opponent)
