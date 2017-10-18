@@ -86,7 +86,7 @@ class Player
 
   def insult(amount)
     @cp -= amount
-    puts "#{name} spirit was broken and took #{amount} reputation damage."
+    puts "DANCEBOT_9000's spirit was broken and took #{amount} reputation damage."
   end
 
   def in_battle?
