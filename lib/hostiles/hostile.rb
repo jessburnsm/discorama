@@ -84,7 +84,8 @@ class Hostile < Actor
     puts "#{name} was wounded and took #{amount} physical damage."
   end
 
-  def init_battle
+  def init_battle(player)
+    @player = player
     @battle_cycle < 1 ? battle_cycle_1 : battle_cycle_2
     @battle_cycle = @battle_cycle + 1
   end
