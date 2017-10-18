@@ -65,8 +65,8 @@ class Hostile < Actor
   def current_status
     puts
     puts @game_text.error(name + " status")
-    puts "HP: #{@hp}/#{MAX_HP}"
-    puts "CP: #{@cp}/#{MAX_CP}"
+    puts "HP: #{@hp}/#{self.class::MAX_HP}"
+    puts "CP: #{@cp}/#{self.class::MAX_CP}"
   end
 
   def defeat
@@ -75,7 +75,7 @@ class Hostile < Actor
 
   def heal(amount)
     @hp += amount
-    @hp = [@hp, MAX_HP].min
+    @hp = [@hp, self.class::MAX_HP].min
     puts "#{name} has gained #{amount} hp!"
   end
 
@@ -96,7 +96,7 @@ class Hostile < Actor
 
   def morale_boost(amount)
     @cp += amount
-    @cp = [@cp, MAX_CP].min
+    @cp = [@cp, self.class::MAX_CP].min
     puts "#{name} has gained #{amount} cp!"
   end
 end
