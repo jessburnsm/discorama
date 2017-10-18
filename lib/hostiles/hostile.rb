@@ -1,7 +1,8 @@
 require_relative '../utilities/actor'
 
 class Hostile < Actor
-  attr_accessor :dance_skill, :taunt_skill, :rally_skill
+  attr_accessor :dance_skill, :taunt_skill, :rally_skill,
+    :taunt_bonus, :dance_bonus
 
   MAX_HP = 100
   MAX_CP = 100
@@ -16,6 +17,8 @@ class Hostile < Actor
     @dance_skill = self.class::DANCE_SKILL
     @taunt_skill = self.class::TAUNT_SKILL
     @rally_skill = self.class::RALLY_SKILL
+    @taunt_bonus = 0
+    @dance_bonus = 0
 
     # Hostile will load actions array according to skills,
     # favoring their particular strengths

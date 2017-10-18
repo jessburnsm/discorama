@@ -1,12 +1,9 @@
 class Player
-  attr_accessor :x_coord, :y_coord, :in_battle, :dance_skill, :taunt_skill, :rally_skill
+  attr_accessor :x_coord, :y_coord, :in_battle,
+    :dance_skill, :taunt_skill, :rally_skill, :taunt_bonus, :dance_bonus
 
   MAX_HP = 100
   MAX_CP = 50
-
-  DEFAULT_DANCE_SKILL = 0
-  DEFAULT_TAUNT_SKILL = 0
-  DEFAULT_RALLY_SKILL = 0
 
   def initialize
     @game_text = GameText.new
@@ -17,9 +14,11 @@ class Player
     # Starting stats
     @hp = MAX_HP
     @cp = MAX_CP
-    @dance_skill = DEFAULT_DANCE_SKILL
-    @taunt_skill = DEFAULT_TAUNT_SKILL
-    @rally_skill = DEFAULT_RALLY_SKILL
+    @dance_skill = 0
+    @taunt_skill = 0
+    @rally_skill = 0
+    @taunt_bonus = 0
+    @dance_bonus = 0
 
     # Battle variables
     @in_battle = false
