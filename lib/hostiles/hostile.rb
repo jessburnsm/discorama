@@ -46,8 +46,9 @@ class Hostile < Actor
 
   def battle
     return defeat if !alive?
-    # Choose action
-    puts "opponent takes turn"
+
+    # Randomly choose an action to execute
+    BattleExecutor.new(self, @player).send(@actions.sample)
   end
 
   def battle_cycle_1
