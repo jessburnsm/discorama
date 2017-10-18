@@ -34,8 +34,8 @@ class Player
     puts @game_text.warning("WARNING: CRITICAL DANCE FAILURE IMMINENT.") if in_danger?
     puts "HP: #{@hp}/#{MAX_HP}"
     puts "CP: #{@cp}/#{MAX_CP}"
-    puts "DANCE LVL: #{@dance_skill}"
-    puts "TAUNT LVL: #{@taunt_skill}"
+    puts "DANCE LVL: #{@dance_skill}" + (@dance_bonus > 0 ? @game_text.information(" + #{@dance_bonus}") : "")
+    puts "TAUNT LVL: #{@taunt_skill}" + (@taunt_bonus > 0 ? @game_text.information(" + #{@taunt_bonus}") : "")
     puts "RALLY LVL: #{@rally_skill}"
   end
 
