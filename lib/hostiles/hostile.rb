@@ -92,7 +92,7 @@ class Hostile < Actor
 
   def insult(amount)
     @cp -= amount
-    puts "#{name} spirit was broken and took #{amount} reputation damage."
+    puts "#{name}'s' spirit was broken and took #{amount} reputation damage."
   end
 
   def morale_boost(amount)
