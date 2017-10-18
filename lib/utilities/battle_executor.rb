@@ -2,6 +2,7 @@ class BattleExecutor
   SUCCESS_DIE = 20
   DAMAGE_DIE = 10
   RALLY_DIE = 4
+  BONUS = 5
 
   def initialize(entity, opponent)
     @entity = entity
@@ -10,7 +11,8 @@ class BattleExecutor
 
   def dance
     if move_succeeds?(@entity.dance_skill, @opponent.dance_skill)
-      @opponent.hurt(diceroll(DAMAGE_DIE))
+      @opponent.hurt(diceroll(DAMAGE_DIE) + @entity.dance_bonus)
+      @entity.dance_bonus = 0
     else
       puts "Dance was not successful."
     end
@@ -18,7 +20,8 @@ class BattleExecutor
 
   def taunt
     if move_succeeds?(@entity.taunt_skill, @opponent.taunt_skill)
-      @opponent.insult(diceroll(DAMAGE_DIE))
+      @opponent.insult(diceroll(DAMAGE_DIE) + @entity.taunt_bonus)
+      @entity.taunt_bonus = 0
     else
       puts "Taunt was not successful."
     end
@@ -28,9 +31,9 @@ class BattleExecutor
     if move_succeeds?(@entity.rally_skill, @opponent.rally_skill)
       case diceroll(RALLY_DIE)
       when 1
-        puts "Dance boost"
+        @entity.dance_bonus = BONUS
       when 2
-        puts "Taunt boost"
+        @entity.taunt_bonus = BONUS
       when 3
         @entity.heal(diceroll(DAMAGE_DIE))
       when 4
