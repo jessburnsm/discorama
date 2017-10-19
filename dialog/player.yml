@@ -6,12 +6,15 @@
   #{name}'s moonwalk makes ladies swoon and grown men cry. Epic!
   #{name} makes it look like they invented the very concept of disco. It's super effective!
 
+:escape: |
+  #{name} makes a shameful retreat from the battle.
+
 :rally_failure: |
   #{name} looks to the crowd for support, but they look away! Noooo!
   #{name} hears the crowd booing! Boo to you to, crowd!
 
 :rally_success: |
-  #{name} rallies the crowd and they are loving it!
+  #{name} rallies the crowd and they are loving it! Yes!
   #{name} hears the crowd chanting! The name #{name} will go down in history!
 
 :taunt_failure: |
