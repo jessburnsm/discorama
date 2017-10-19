@@ -38,7 +38,6 @@ class Player
   end
 
   def current_status
-    puts
     puts @game_text.information(@game_text.player + " SYSTEM STATUS")
     puts @game_text.warning("WARNING: CRITICAL DANCE FAILURE IMMINENT.") if in_danger?
     puts "HP: #{@hp}/#{MAX_HP}"

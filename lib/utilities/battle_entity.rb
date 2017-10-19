@@ -14,6 +14,14 @@ module BattleEntity
     puts "A bonus modifier has been applied to #{name}'s taunt skill!"
   end
 
+  def current_cp
+    "CP: #{@cp}/#{self.class::MAX_CP}"
+  end
+
+  def current_hp
+    "HP: #{@hp}/#{self.class::MAX_HP}"
+  end
+
   def heal(amount)
     @hp += amount
     @hp = [@hp, self.class::MAX_HP].min
