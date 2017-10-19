@@ -25,6 +25,8 @@ class Player
     @opponent = nil
 
     @inventory = {}
+
+    @dialog = YAML.load_file('dialog/player.yml')
   end
 
   def current_status
@@ -60,6 +62,14 @@ class Player
   def use(target)
     @inventory[target].execute_effect(self)
     @inventory.delete(target)
+  end
+
+  ######################################
+  # Battle Dialog
+  ######################################
+  def dance_failure
+    puts eval("\"" + @dialog[:dance_failure].split("\n").sample + "\"")
+    puts eval("\"" + @dialog[:dance_failure_result] + "\"")
   end
 
   ######################################

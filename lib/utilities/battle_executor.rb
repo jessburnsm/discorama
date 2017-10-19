@@ -14,7 +14,7 @@ class BattleExecutor
       @opponent.hurt(dance_damage_calculator)
       @entity.dance_bonus = 0
     else
-      puts "Dance was not successful."
+      @entity.dance_failure
     end
   end
 

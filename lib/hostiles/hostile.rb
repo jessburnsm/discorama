@@ -41,6 +41,15 @@ class Hostile < Actor
   end
 
   ######################################
+  # Battle Dialog
+  ######################################
+  def dance_failure
+    puts eval("\"" + @dialog[:dance_failure].split("\n").sample + "\"")
+    puts eval("\"" + @dialog[:dance_failure_result] + "\"")
+  end
+
+
+  ######################################
   # Battle
   ######################################
   def alive?

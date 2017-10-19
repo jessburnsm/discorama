@@ -18,3 +18,9 @@
 
 :room_description: |
   Test room text for princess
+
+:dance_failure: |
+  #{name} attempts to limbo with an invisible pole. She fails anyway.
+  #{name} tries to kick up and shockingly hits herself in the nose.
+
+:dance_failure_result: "#{@game_text.player} takes no damage!"
