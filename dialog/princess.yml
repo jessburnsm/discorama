@@ -26,3 +26,9 @@
 :dance_success: |
   #{name}'s mastery of the Macarena is undeniable! Holy shit!
   #{name} does the running man so well the crowd wonders if a treadmill is installed in the floor. Crazy!
+
+:taunt_failure: |
+  #{name} makes a lame joke!
+
+:taunt_success: |
+  #{name} lays down an epic diss!

@@ -5,3 +5,9 @@
 :dance_success: |
   #{name}'s moonwalk makes ladies swoon and grown men cry. Epic!
   #{name} makes it look like they invented the very concept of disco. It's super effective!
+
+:taunt_failure: |
+  #{name} makes a lame joke!
+
+:taunt_success: |
+  #{name} lays down an epic diss!

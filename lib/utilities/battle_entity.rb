@@ -12,7 +12,7 @@ module BattleEntity
 
   def hurt(amount)
     @hp -= amount
-    puts "#{name} was wounded and took #{amount} damage."
+    puts "#{name} was wounded and lost #{amount} HP!"
   end
 
   def insult(amount)
@@ -36,5 +36,14 @@ module BattleEntity
 
   def dance_success
     puts eval("\"" + @dialog[:dance_success].split("\n").sample + "\"")
+  end
+
+  def taunt_failure
+    puts eval("\"" + @dialog[:taunt_failure].split("\n").sample + "\"")
+    puts "#{opponent_name} takes no CP loss from that lame diss!"
+  end
+
+  def taunt_success
+    puts eval("\"" + @dialog[:taunt_success].split("\n").sample + "\"")
   end
 end

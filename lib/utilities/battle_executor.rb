@@ -21,10 +21,11 @@ class BattleExecutor
 
   def taunt
     if move_succeeds?(@entity.taunt_skill, @opponent.taunt_skill)
+      @entity.taunt_success
       @opponent.insult(diceroll(DAMAGE_DIE) + @entity.taunt_bonus)
       @entity.taunt_bonus = 0
     else
-      puts "Taunt was not successful."
+      @entity.taunt_failure
     end
   end
 
