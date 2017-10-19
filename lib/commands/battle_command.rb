@@ -46,7 +46,8 @@ end
 # Responsible for execution of escape command
 class BattleCommand::Escape
   def execute(player, opponent)
-    puts "escape placeholder"
+    player.escape
     player.in_battle = false
+    player.set_opponent(nil)
   end
 end

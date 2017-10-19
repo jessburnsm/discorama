@@ -79,6 +79,11 @@ class Player
     @opponent
   end
 
+  def escape
+    puts eval("\"" + @dialog[:escape].split("\n").sample + "\"")
+    insult(5)
+  end
+
   def in_battle?
     @in_battle
   end
@@ -90,7 +95,7 @@ class Player
   def opponent_name
     @opponent.name
   end
-  
+
   def set_opponent(opponent)
     @opponent = opponent
   end
