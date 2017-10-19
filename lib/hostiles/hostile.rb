@@ -1,6 +1,9 @@
 require_relative '../utilities/actor'
+require_relative '../utilities/battle_entity'
 
 class Hostile < Actor
+  include BattleEntity
+
   attr_accessor :dance_skill, :taunt_skill, :rally_skill,
     :taunt_bonus, :dance_bonus, :cp
 
@@ -41,26 +44,17 @@ class Hostile < Actor
   end
 
   ######################################
-  # Battle Dialog
-  ######################################
-  def dance_failure
-    puts eval("\"" + @dialog[:dance_failure].split("\n").sample + "\"")
-    puts eval("\"" + @dialog[:dance_failure_result] + "\"")
-  end
-
-
-  ######################################
   # Battle
   ######################################
-  def alive?
-    @hp > 0
+  def opponent_name
+    @game_text.player
   end
-
   def battle
     return defeat if !alive?
 
     # Randomly choose an action to execute
-    BattleExecutor.new(self, @player).send(@actions.sample)
+    BattleExecutor.new(self, @player).send(:dance)
+    # BattleExecutor.new(self, @player).send(@actions.sample)
   end
 
   def battle_cycle_1
@@ -82,16 +76,7 @@ class Hostile < Actor
     puts "opponent defeated!"
   end
 
-  def heal(amount)
-    @hp += amount
-    @hp = [@hp, self.class::MAX_HP].min
-    puts "#{name} has gained #{amount} hp!"
-  end
 
-  def hurt(amount)
-    @hp -= amount
-    puts "#{name} was wounded and took #{amount} physical damage."
-  end
 
   def init_battle(player)
     @player = player
@@ -99,16 +84,6 @@ class Hostile < Actor
     @battle_cycle = @battle_cycle + 1
   end
 
-  def insult(amount)
-    @cp -= amount
-    puts "#{name}'s' spirit was broken and took #{amount} reputation damage."
-  end
-
-  def morale_boost(amount)
-    @cp += amount
-    @cp = [@cp, self.class::MAX_CP].min
-    puts "#{name} has gained #{amount} cp!"
-  end
 end
 
 class Princess < Hostile

@@ -1,5 +1,3 @@
 :dance_failure: |
-  #{@game_text.player} attempts to do the robot, but looks too human! Embarrassing!
-  #{@game_text.player} tries the electric slide, but forgets the 'boogie woogie woogie' part. Disaster!
-
-:dance_failure_result: "#{@opponent.name} takes no damage from #{@game_text.player}'s feeble dance attempt."
+  #{name} attempts to do the robot, but looks too human! Embarrassing!
+  #{name} tries the electric slide, but forgets the 'boogie woogie woogie' part. Disaster!

@@ -1,4 +1,8 @@
+require_relative './utilities/battle_entity'
+
 class Player
+  include BattleEntity
+
   attr_accessor :x_coord, :y_coord, :in_battle,
     :dance_skill, :taunt_skill, :rally_skill, :taunt_bonus, :dance_bonus, :cp
 
@@ -27,6 +31,10 @@ class Player
     @inventory = {}
 
     @dialog = YAML.load_file('dialog/player.yml')
+  end
+
+  def name
+    @game_text.player
   end
 
   def current_status
@@ -65,39 +73,18 @@ class Player
   end
 
   ######################################
-  # Battle Dialog
-  ######################################
-  def dance_failure
-    puts eval("\"" + @dialog[:dance_failure].split("\n").sample + "\"")
-    puts eval("\"" + @dialog[:dance_failure_result] + "\"")
-  end
-
-  ######################################
   # Battle
   ######################################
-  def alive?
-    @hp > 0
-  end
+
 
   def get_opponent
     @opponent
   end
 
-  def heal(amount)
-    @hp += amount
-    @hp = [@hp, MAX_HP].min
-    puts "DANCEBOT_9000 has gained #{amount} hp!"
+  def opponent_name
+    @opponent.name
   end
 
-  def hurt(amount)
-    @hp -= amount
-    puts "DANCEBOT_9000 was wounded"
-  end
-
-  def insult(amount)
-    @cp -= amount
-    puts "DANCEBOT_9000's spirit was broken and took #{amount} reputation damage."
-  end
 
   def in_battle?
     @in_battle
