@@ -11,7 +11,7 @@ class BattleExecutor
 
   def dance
     if move_succeeds?(@entity.dance_skill, @opponent.dance_skill)
-      @opponent.hurt(diceroll(DAMAGE_DIE) + @entity.dance_bonus)
+      @opponent.hurt(dance_damage_calculator)
       @entity.dance_bonus = 0
     else
       puts "Dance was not successful."
@@ -45,6 +45,13 @@ class BattleExecutor
   end
 
   private
+
+  def dance_damage_calculator
+    base_damage = diceroll(DAMAGE_DIE) + @entity.dance_bonus
+    defense = (@opponent.cp * 0.1).floor
+    total_damage = base_damage - defense
+    return total_damage > 0 ? total_damage : 1
+  end
 
   def diceroll(upper_limit)
     rand(1..upper_limit)
