@@ -53,8 +53,7 @@ class Hostile < Actor
     return defeat if !alive?
 
     # Randomly choose an action to execute
-    BattleExecutor.new(self, @player).send(:dance)
-    # BattleExecutor.new(self, @player).send(@actions.sample)
+    BattleExecutor.new(self, @player).send(@actions.sample)
   end
 
   def battle_cycle_1
