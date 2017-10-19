@@ -4,6 +4,16 @@ module BattleEntity
     @hp > 0
   end
 
+  def apply_dance_bonus(bonus)
+    @dance_bonus = bonus
+    puts "A bonus modifier has been applied to #{name}'s dance skill!"
+  end
+
+  def apply_taunt_bonus(bonus)
+    @taunt_bonus = bonus
+    puts "A bonus modifier has been applied to #{name}'s taunt skill!"
+  end
+
   def heal(amount)
     @hp += amount
     @hp = [@hp, self.class::MAX_HP].min
@@ -26,6 +36,14 @@ module BattleEntity
     puts "#{name} has gained #{amount} CP!"
   end
 
+  def revert_dance_bonus
+    @dance_bonus = 0
+  end
+
+  def revert_taunt_bonus
+    @taunt_bonus = 0
+  end
+
   ######################################
   # Battle dialog
   ######################################
@@ -36,6 +54,14 @@ module BattleEntity
 
   def dance_success
     puts eval("\"" + @dialog[:dance_success].split("\n").sample + "\"")
+  end
+
+  def rally_success
+    puts eval("\"" + @dialog[:rally_success].split("\n").sample + "\"")
+  end
+
+  def rally_failure
+    puts eval("\"" + @dialog[:rally_failure].split("\n").sample + "\"")
   end
 
   def taunt_failure

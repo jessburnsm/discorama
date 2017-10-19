@@ -13,7 +13,7 @@ class BattleExecutor
     if move_succeeds?(@entity.dance_skill, @opponent.dance_skill)
       @entity.dance_success
       @opponent.hurt(dance_damage_calculator)
-      @entity.dance_bonus = 0
+      @entity.revert_dance_bonus
     else
       @entity.dance_failure
     end
@@ -23,7 +23,7 @@ class BattleExecutor
     if move_succeeds?(@entity.taunt_skill, @opponent.taunt_skill)
       @entity.taunt_success
       @opponent.insult(diceroll(DAMAGE_DIE) + @entity.taunt_bonus)
-      @entity.taunt_bonus = 0
+      @entity.revert_taunt_bonus
     else
       @entity.taunt_failure
     end
@@ -31,18 +31,19 @@ class BattleExecutor
 
   def rally
     if move_succeeds?(@entity.rally_skill, @opponent.rally_skill)
+      @entity.rally_success
       case diceroll(RALLY_DIE)
       when 1
-        @entity.dance_bonus = BONUS
+        @entity.apply_dance_bonus(BONUS)
       when 2
-        @entity.taunt_bonus = BONUS
+        @entity.apply_taunt_bonus(BONUS)
       when 3
         @entity.heal(diceroll(DAMAGE_DIE))
       when 4
         @entity.morale_boost(diceroll(DAMAGE_DIE))
       end
     else
-      puts "Rally was not successful"
+      @entity.rally_failure
     end
   end
 

@@ -27,6 +27,14 @@
   #{name}'s mastery of the Macarena is undeniable! Holy shit!
   #{name} does the running man so well the crowd wonders if a treadmill is installed in the floor. Crazy!
 
+:rally_failure: |
+  #{name} tries to blow a kiss at a bystander, but they look disgusted! Depressing!
+  #{name} bats her eyelashes at the crowd, but they are unimpressed! Harsh!
+
+:rally_success: |
+  #{name} sways her hips and the crowd follows! Wow!
+  #{name} locks eye with a member of the crowd and they are enchanted! Cripes!
+
 :taunt_failure: |
   #{name} makes a lame joke!
 
