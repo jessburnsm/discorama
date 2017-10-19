@@ -35,20 +35,17 @@ class Hostile < Actor
     @battle_cycle = 0
   end
 
-  def name
-    @name.to_s.red
-  end
-
   def is_hostile?
     true
+  end
+
+  def name
+    @name.to_s.red
   end
 
   ######################################
   # Battle
   ######################################
-  def opponent_name
-    @game_text.player
-  end
   def battle
     return defeat if !alive?
 
@@ -75,14 +72,15 @@ class Hostile < Actor
     puts "opponent defeated!"
   end
 
-
-
   def init_battle(player)
     @player = player
     @battle_cycle < 1 ? battle_cycle_1 : battle_cycle_2
     @battle_cycle = @battle_cycle + 1
   end
 
+  def opponent_name
+    @game_text.player
+  end
 end
 
 class Princess < Hostile

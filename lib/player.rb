@@ -75,16 +75,9 @@ class Player
   ######################################
   # Battle
   ######################################
-
-
   def get_opponent
     @opponent
   end
-
-  def opponent_name
-    @opponent.name
-  end
-
 
   def in_battle?
     @in_battle
@@ -94,6 +87,10 @@ class Player
     @hp < 10 || @cp < 10
   end
 
+  def opponent_name
+    @opponent.name
+  end
+  
   def set_opponent(opponent)
     @opponent = opponent
   end
