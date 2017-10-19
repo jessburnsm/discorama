@@ -94,12 +94,6 @@ class Player
     @hp < 10 || @cp < 10
   end
 
-  def morale_boost(amount)
-    @cp += amount
-    @cp = [@cp, MAX_CP].min
-    puts "DANCEBOT_9000 has gained #{amount} cp!"
-  end
-
   def set_opponent(opponent)
     @opponent = opponent
   end
