@@ -11,6 +11,7 @@ class BattleExecutor
 
   def dance
     if move_succeeds?(@entity.dance_skill, @opponent.dance_skill)
+      @entity.dance_success
       @opponent.hurt(dance_damage_calculator)
       @entity.dance_bonus = 0
     else

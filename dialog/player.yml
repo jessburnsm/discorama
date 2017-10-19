@@ -1,3 +1,7 @@
 :dance_failure: |
   #{name} attempts to do the robot, but looks too human! Embarrassing!
   #{name} tries the electric slide, but forgets the 'boogie woogie woogie' part. Disaster!
+
+:dance_success: |
+  #{name}'s moonwalk makes ladies swoon and grown men cry. Epic!
+  #{name} makes it look like they invented the very concept of disco. It's super effective!

@@ -33,4 +33,8 @@ module BattleEntity
     puts eval("\"" + @dialog[:dance_failure].split("\n").sample + "\"")
     puts "#{opponent_name} takes no damage from the feeble dance attempt!"
   end
+
+  def dance_success
+    puts eval("\"" + @dialog[:dance_success].split("\n").sample + "\"")
+  end
 end
