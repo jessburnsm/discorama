@@ -47,7 +47,7 @@ class GameText
   end
 
   def player
-    @player
+    @player.green
   end
 
   def warning(string)
