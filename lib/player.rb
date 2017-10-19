@@ -66,7 +66,7 @@ class Player
   # Battle
   ######################################
   def alive?
-    @hp > 0 && @cp > 0
+    @hp > 0
   end
 
   def get_opponent
