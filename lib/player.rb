@@ -1,6 +1,6 @@
 class Player
   attr_accessor :x_coord, :y_coord, :in_battle,
-    :dance_skill, :taunt_skill, :rally_skill, :taunt_bonus, :dance_bonus
+    :dance_skill, :taunt_skill, :rally_skill, :taunt_bonus, :dance_bonus, :cp
 
   MAX_HP = 100
   MAX_CP = 50

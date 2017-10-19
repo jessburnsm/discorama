@@ -2,7 +2,7 @@ require_relative '../utilities/actor'
 
 class Hostile < Actor
   attr_accessor :dance_skill, :taunt_skill, :rally_skill,
-    :taunt_bonus, :dance_bonus
+    :taunt_bonus, :dance_bonus, :cp
 
   MAX_HP = 100
   MAX_CP = 100
