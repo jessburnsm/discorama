@@ -35,6 +35,7 @@ module BattleEntity
 
   def insult(amount)
     @cp -= amount
+    @cp = [@cp, 0].max
     puts "#{name} has lost #{amount} CP!"
   end
 
