@@ -51,3 +51,12 @@ class BattleCommand::Escape
     player.set_opponent(nil)
   end
 end
+
+# Responsible for execution of end command
+class BattleCommand::End
+  def execute(player, opponent)
+    player.in_battle = false
+    player.set_opponent(nil)
+    opponent.remove_item_from_room(opponent.key)
+  end
+end
