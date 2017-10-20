@@ -1,0 +1,11 @@
+:look: |
+  This bathroom is what some #{"HUMANS".yellow} might describe as 'kitsch'
+  That is to say, you've never seen so much green and pink tile in one place before.
+
+:talk: |
+    You decide to run your weather subroutine and begin to recite the forecast for the next 5 days.
+    Unfortunately, due to an OS upgrade bug, you can only forecast the weather in the form of puns.
+    'When the fog burns off tomorrow morning, it won’t be mist.'
+
+:room_description: |
+  You are in the women's bathroom. It is currently devoid of #{"HUMAN".yellow} females.

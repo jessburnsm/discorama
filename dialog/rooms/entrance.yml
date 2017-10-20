@@ -1,0 +1,17 @@
+:look: |
+  #{@game_text.discorama} is one of the most popular attractions in New Atlanta,
+  as it is one of the only buildings that survived the #{@game_text.emphasis('Robot Revolution')} of 2080.
+  (Undergound Atlanta also survived, but no one goes there, so whatever).
+
+  When (old) Atlanta burned to the ground, this club remained open and accepted
+  all patrons, both #{@game_text.emphasis('human')} and #{@game_text.emphasis('robotic')}.
+
+  Your auditory receptors are registering music from the dancefloor, to the #{@game_text.highlight('south')}.
+  Bathrooms are accessible from the entrance as well, to the #{@game_text.highlight('east')} and #{@game_text.highlight('west')}.
+
+:talk: |
+  You begin to sing your favorite song, 'Daisy Bell'. The #{@game_text.emphasis('humans')} in the room look mildly alarmed.
+  When you finish, the #{@game_text.emphasis('humans')}, give you polite applause and avoid eye contact.
+
+:room_description: |
+  You are in the entrance of #{@game_text.discorama}.

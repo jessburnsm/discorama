@@ -1,0 +1,13 @@
+:look: |
+  You find the smooth jazz rather relaxing.
+  As you look over the room a mirror catches your eye and you see your #{"MOBILE PLATFORM".yellow} in the reflection.
+
+:talk: |
+  It seems like now would be a great time to recite the haiku you've been working on...
+  I am a robot
+  A robot can dance, it's true -
+  #{"HUMANS".yellow} watch my moves.
+  The patrons in the bathroom look alarmed. Or are they moved? They are probably just jealous of your #{"SUPERIOR".yellow} poetry.
+
+:room_description: |
+  You are in the men's bathroom. Curiously, smooth jazz is playing over the speakers in here.

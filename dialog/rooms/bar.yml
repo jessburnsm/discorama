@@ -1,0 +1,8 @@
+:look: |
+  PLACEHOLDER
+
+:talk: |
+  PLACEHOLDER
+
+:room_description: |
+  You are in the #{@game_text.discorama} bar. Souvenir cups litter the bartop.

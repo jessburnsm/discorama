@@ -1,10 +1,16 @@
 class Room
+  require 'colorize'
+  require 'yaml'
+
   attr_accessor :size, :content
 
   def initialize
     @content = {}
     @content = initialize_content
     @game_text = GameText.new
+
+    # This needs to be implemented per child class
+    @dialog = set_dialog
   end
 
   def add_content(target)
@@ -34,16 +40,21 @@ class Room
     has_target?(target) && @content[target].is_hostile?
   end
 
+  ## DIALOG COMMANDS
   def look
-    puts "LOOK"
+    puts eval("\"" + @dialog[:look] + "\"")
+  end
+
+  def take(*)
+    puts eval("\"" + @dialog[:take] + "\"")
   end
 
   def talk
-    puts "TALK"
+    puts eval("\"" + @dialog[:talk] + "\"")
   end
 
   def to_s
-    "You are in a #{@size} room. It is #{@adjective}."
+    eval("\"" + @dialog[:room_description] + "\"")
   end
 
   private
@@ -53,51 +64,52 @@ class Room
   end
 end
 
-class MensBathroom < Room
-  def look
-    puts "You find the smooth jazz rather relaxing."
-    puts "As you look over the room a mirror catches your eye and you see your #{"MOBILE PLATFORM".yellow} in the reflection."
-    puts "You wonder if the #{"PROFESSOR".yellow} would be happy you've dedicated your existence to the non-violent pursuit of dancing."
-    puts "It's too bad he died in that #{"DANCE-A-THON".yellow} all those years ago. He will be #{"AVENGED".yellow}!"
+class Entrance < Room
+  def set_dialog
+    YAML.load_file('dialog/rooms/entrance.yml')
   end
 
-  def talk
-    puts "It seems like now would be a great time to recite the haiku you've been working on:"
-    puts "I am a robot"
-    puts "A robot can dance, it's true -"
-    puts "#{"HUMANS".yellow} watch my moves."
-    puts "The patrons in the bathroom look alarmed. Or are they moved? They are probably just jealous of your #{"SUPERIOR".yellow} poetry."
-  end
-
-  def to_s
-    "You are in the men's bathroom. For whatever reason, smooth jazz is playing over the speakers in here."
+  def initialize_content
+    add_content(Jerry.new(self).set_target_data)
+    add_content(Ryo.new(self).set_target_data)
+    add_content(Umbrella.new(self).set_target_data)
   end
 end
 
 class Dancefloor < Room
-  def look
-    puts "The dancefloor is the largest area of the club."
-    puts "The floor lights up and changes colors as the music plays."
+  def set_dialog
+    YAML.load_file('dialog/rooms/dancefloor.yml')
   end
 
-  def talk
-    puts "You attempt to start a conversation with yourself, but the music is too loud."
-    puts "Instead, you start singing along to the current song."
+  def initialize_content
+    add_content(Princess.new(self).set_target_data)
   end
+end
 
-  def to_s
-    "You are at the dancefloor. This is the heart of the #{@game_text.discorama} where #{"HUMANS".yellow} have exercised their dancing authority. Not for long though."
+class MensBathroom < Room
+  def set_dialog
+    YAML.load_file('dialog/rooms/mens_bathroom.yml')
   end
 end
 
 class Lounge < Room
-  def to_s
-    "You are in the #{@game_text.discorama} lounge. A sign claims that smoking is not permitted. You observe several #{"HUMANS".yellow} smoking. Odd."
+  def set_dialog
+    YAML.load_file('dialog/rooms/lounge.yml')
   end
 end
 
 class Bar < Room
-  def to_s
-    "You are in the #{@game_text.discorama} bar. Souvenir cups litter the bartop."
+  def set_dialog
+    YAML.load_file('dialog/rooms/bar.yml')
+  end
+end
+
+class WomensBathroom < Room
+  def set_dialog
+    YAML.load_file('dialog/rooms/womens_bathroom.yml')
+  end
+
+  def initialize_content
+    add_content(Fannie.new(self).set_target_data)
   end
 end

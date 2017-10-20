@@ -1,0 +1,10 @@
+:look: |
+  The dancefloor is the largest area of the club.
+  The floor lights up and changes colors as the music plays.
+
+:talk: |
+  You attempt to start a conversation with yourself, but the music is too loud.
+  Instead, you start singing along to the current song.
+
+:room_description: |
+  You are at the dancefloor. This is the heart of #{@game_text.discorama} where #{"HUMANS".yellow} have exercised their dancing authority. Not for long though.

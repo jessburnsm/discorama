@@ -1,0 +1,8 @@
+:look: |
+  PLACEHOLDER
+
+:talk: |
+  PLACEHOLDER
+
+:room_description: |
+  You are in the #{@game_text.discorama} lounge. A sign claims that smoking is not permitted. You observe several #{"HUMANS".yellow} smoking. Odd.
