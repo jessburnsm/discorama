@@ -17,7 +17,7 @@
   Test talk2 text for princess
 
 :room_description: |
-  Test room text for princess
+  #{name} is flirting with a group of her admirers on the dancefloor.
 
 :dance_failure: |
   #{name} attempts to limbo with an invisible pole. She fails anyway. Ouch!
@@ -26,6 +26,9 @@
 :dance_success: |
   #{name}'s mastery of the Macarena is undeniable! Holy shit!
   #{name} does the running man so well the crowd wonders if a treadmill is installed in the floor. Crazy!
+
+:defeat: |
+  #{name} slides to the floor in despair as the crowd frenzies! #{name} has been defeated!
 
 :rally_failure: |
   #{name} tries to blow a kiss at a bystander, but they look disgusted! Depressing!
