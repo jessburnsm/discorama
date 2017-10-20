@@ -62,7 +62,8 @@ class Hostile < Actor
   end
 
   def defeat
-    puts "opponent defeated!"
+    puts eval("\"" + @dialog[:defeat] + "\"")
+    return -1
   end
 
   def init_battle(player)
