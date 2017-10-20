@@ -7,8 +7,11 @@ class BattleDirector
   end
 
   def execute_opponent_turn
-    @opponent.battle
-    battle_status
+    if @opponent.battle == -1
+      BattleCommand::End.new.execute(@player, @opponent)
+    else
+      battle_status
+    end
   end
 
   def call(action)
