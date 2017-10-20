@@ -61,13 +61,6 @@ class Hostile < Actor
     puts eval("\"" + @dialog[:battle_start_2] + "\"")
   end
 
-  def current_status
-    puts
-    puts @game_text.error(name + " status")
-    puts "HP: #{@hp}/#{self.class::MAX_HP}"
-    puts "CP: #{@cp}/#{self.class::MAX_CP}"
-  end
-
   def defeat
     puts "opponent defeated!"
   end
