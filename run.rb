@@ -20,9 +20,9 @@ class Game
 
       while @player.alive?
         if @player.in_battle?
-          BattleDirector.new(@player).execute_opponent_turn
           @game_text.battle_prompt
           BattleDirector.new(@player).call(@input_parser.parse)
+          BattleDirector.new(@player).execute_opponent_turn
         else
           @game_text.delimiter
           @current_room = @world.get_room_of(@player)
