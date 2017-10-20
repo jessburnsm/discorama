@@ -47,7 +47,7 @@ Game commands:
 7. Use Items: `use/u`
 9. View your stats: `status/st`
 10. Initiate dance battle: `battle/b`
-11. Exit: `exit/e`, `cmd+c`
+11. Exit: `exit/e`, `ctrl+c`
 
 -----------
 
