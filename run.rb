@@ -17,9 +17,10 @@ class DiscoEngine
   def start_game
     begin
       @game_text.intro
-      while @player.alive?
+      while @player.alive? && @world.has_hostiles?
         @player.in_battle? ? battle_loop : game_loop
       end
+      @player.alive? ? @player.win : @player.defeat
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       @game_text.exit
     end

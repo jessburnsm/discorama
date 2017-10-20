@@ -14,6 +14,15 @@ class World
     @rooms[entity.x_coord][entity.y_coord]
   end
 
+  def has_hostiles?
+    @rooms.each do |level|
+      level.each do |room|
+        return true if room.has_hostile?
+      end
+    end
+    return false
+  end
+
   def move_entity_north(entity)
     if entity.y_coord > 0
       entity.y_coord -= 1

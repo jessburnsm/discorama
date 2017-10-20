@@ -74,6 +74,10 @@ class Player
   ######################################
   # Battle
   ######################################
+  def defeat
+    puts "You were defeated."
+  end
+
   def get_opponent
     @opponent
   end
@@ -97,5 +101,9 @@ class Player
 
   def set_opponent(opponent)
     @opponent = opponent
+  end
+
+  def win
+    puts "You won!"
   end
 end

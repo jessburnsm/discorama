@@ -19,6 +19,13 @@ class Room
     @content[target]
   end
 
+  def has_hostile?
+    @content.each do |key, content|
+      return true if content.is_hostile?
+    end
+    return false
+  end
+
   def has_target?(target)
     @content.key?(target)
   end
