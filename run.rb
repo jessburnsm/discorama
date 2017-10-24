@@ -27,7 +27,7 @@ class DiscoEngine
   end
 
   def game_loop
-    @game_text.delimiter
+    # @game_text.delimiter
     @game_text.current_status(@world.get_room_of(@player))
     @game_text.action_prompt
     ActionDirector.new(@world, @player).call(@input_parser.parse)
