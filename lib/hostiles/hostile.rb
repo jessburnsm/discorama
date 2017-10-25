@@ -35,6 +35,10 @@ class Hostile < Actor
     @battle_cycle = 0
   end
 
+  def can_escape?
+    true
+  end
+
   def is_hostile?
     true
   end

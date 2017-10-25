@@ -3,6 +3,9 @@
 class BattleCommandNotFound < StandardError
 end
 
+class BattleCantEscape < StandardError
+end
+
 # Responsible for instantiating correct battle command class
 # based on received user input
 class BattleCommand
@@ -46,9 +49,13 @@ end
 # Responsible for execution of escape command
 class BattleCommand::Escape
   def execute(player, opponent)
-    player.escape
-    player.in_battle = false
-    player.set_opponent(nil)
+    if opponent.can_escape?
+      player.escape
+      player.in_battle = false
+      player.set_opponent(nil)
+    else
+      raise BattleCantEscape
+    end
   end
 end
 
