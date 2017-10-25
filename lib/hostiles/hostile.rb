@@ -79,24 +79,6 @@ class Hostile < Actor
   def opponent_name
     @game_text.player
   end
-end
 
-class Princess < Hostile
-  MAX_HP = 50
-  MAX_CP = 50
-  DANCE_SKILL = 1
-  TAUNT_SKILL = 3
-  RALLY_SKILL = 1
-
-  def set_name
-    "Princess"
-  end
-
-  def set_dialog
-    YAML.load_file('dialog/princess.yml')
-  end
-
-  def set_portrait
-    #File.open('portraits/jerry.txt').read
   end
 end
