@@ -6,7 +6,7 @@ class Jerry < Person
   end
 
   def set_dialog
-    YAML.load_file('dialog/jerry.yml')
+    YAML.load_file('dialog/people/jerry.yml')
   end
 
   def set_portrait
