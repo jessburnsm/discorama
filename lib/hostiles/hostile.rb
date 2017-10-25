@@ -23,12 +23,7 @@ class Hostile < Actor
     @taunt_bonus = 0
     @dance_bonus = 0
 
-    # Hostile will load actions array according to skills,
-    # favoring their particular strengths
-    @actions = []
-    @dance_skill.times { @actions << :dance }
-    @taunt_skill.times { @actions << :taunt }
-    @rally_skill.times { @actions << :rally }
+    set_actions
 
     # Battle cycle keeps track of how many times the player
     # has used the battle command on this hostile
@@ -80,5 +75,12 @@ class Hostile < Actor
     @game_text.player
   end
 
+  def set_actions
+    # Hostile will load actions array according to skills,
+    # favoring their particular strengths
+    @actions = []
+    @dance_skill.times { @actions << :dance }
+    @taunt_skill.times { @actions << :taunt }
+    @rally_skill.times { @actions << :rally }
   end
 end
