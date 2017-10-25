@@ -1,5 +1,6 @@
 :battle_error: "ERROR: HOSTILE ENTITY '#{target.to_s.upcase}' NOT FOUND"
 :battle_prompt: "\nENTER BATTLE COMMAND [ (D)ANCE, (T)AUNT, (R)ALLY, (E)SCAPE ]: "
+:cant_escape: "ERROR: CANNOT ESCAPE BATTLE"
 :command_error: "ERROR: COMMAND '#{command.to_s.upcase}' NOT FOUND IN EXECUTABLE DANCEBOT_9000.vb (NoMethodError)"
 :delimiter: "\n----------------------------------\n\n"
 :discorama: "The #{'DISC'.magenta}#{'-O-'.green}#{'RAMA'.magenta}"
@@ -9,7 +10,7 @@
   The location: New Atlanta's hottest club, #{discorama}.
   The mission: Win #{emphasis('THE DISC-O-RAMA DANCE BATTLE 3017 MASTERS CHAMPIONSHIP')} competition.
 
-  It's time to prove your #{emphasis('DANCING SUPERIORITY')}! A neon sign guides the way...
+  It's time to prove your #{emphasis('DANCING SUPERIORITY')}. A neon sign guides the way...
 :game_prompt: "INITIATING DANCEBOT_9000 PROCESS... COMPLETE. PRESS ENTER TO BOOT."
 :game_start: "\nPRESS ENTER TO ENGAGE OPERATION DANCE BATTLE."
 :help: |
