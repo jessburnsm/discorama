@@ -22,6 +22,8 @@ class BattleDirector
       BattleCommand.get_command(action[:command]).execute(@player, @opponent)
     rescue BattleCommandNotFound => message
       @game_text.command_error(message)
+    rescue BattleCantEscape
+      @game_text.cant_escape
     end
   end
 

@@ -69,6 +69,10 @@ class GameText
     puts error(eval("\"" + @text[:battle_error] + "\""))
   end
 
+  def cant_escape
+    puts error(eval("\"" + @text[:cant_escape] + "\""))
+  end
+
   def command_error(command)
     puts error(eval("\"" + @text[:command_error] + "\""))
   end
