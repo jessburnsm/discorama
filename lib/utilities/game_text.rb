@@ -15,8 +15,16 @@ class GameText
     print process(text)
   end
 
-  def process(text)
+  def process(text, name=nil)
     eval("\"" + text + "\"")
+  end
+
+  def read_from_yaml(dialog, name=nil)
+    dialog.split("\n\n").each do |string|
+      puts eval("\"" + string + "\"")
+      gets
+    end
+    system "clear"
   end
 
   ######################################
@@ -94,6 +102,7 @@ class GameText
 
   def current_status(current_room)
     puts current_room
+    puts
     current_room.content.each do |key, content|
       puts content
     end
