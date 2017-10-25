@@ -17,9 +17,15 @@ class DiscoEngine
   def start_game
     begin
       @game_text.intro
+
+      # Run the tutorial
+      ActionDirector.new(@world, @player).call({command: :talk, target: :jerry})
+
+      # The main game
       while @player.alive? && @world.has_hostiles?
         @player.in_battle? ? battle_loop : game_loop
       end
+
       @player.alive? ? @player.win : @player.defeat
     rescue SystemExit, Interrupt # Catpure ctrl+c exit, end gracefully
       @game_text.exit
