@@ -42,19 +42,19 @@ class Room
 
   ## DIALOG COMMANDS
   def look
-    puts eval("\"" + @dialog[:look] + "\"")
+    @game_text.read_from_yaml(@dialog[:look])
   end
 
   def take(*)
-    puts eval("\"" + @dialog[:take] + "\"")
+    @game_text.read_from_yaml(@dialog[:take])
   end
 
   def talk
-    puts eval("\"" + @dialog[:talk] + "\"")
+    @game_text.read_from_yaml(@dialog[:talk])
   end
 
   def to_s
-    eval("\"" + @dialog[:room_description] + "\"")
+    @game_text.process(@dialog[:room_description])
   end
 
   private

@@ -20,10 +20,10 @@ class Person < Actor
   end
 
   def talk_cycle_1
-    puts eval("\"" + @dialog[:talk] + "\"")
+    @game_text.read_from_yaml(@dialog[:talk], name)
   end
 
   def talk_cycle_2
-    puts eval("\"" + @dialog[:talk_2] + "\"")
+    @game_text.read_from_yaml(@dialog[:talk_2], name)
   end
 end
