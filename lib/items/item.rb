@@ -9,6 +9,10 @@ class Item < Actor
     @name.to_s.cyan
   end
 
+  def deletable?
+    true
+  end
+
   def description
     @game_text.process(@dialog[:inventory_description])
   end

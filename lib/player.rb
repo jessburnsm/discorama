@@ -72,7 +72,9 @@ class Player
 
   def use(target)
     @inventory[target].execute_effect(self)
-    @inventory.delete(target)
+    if @inventory[target].deletable?
+      @inventory.delete(target)
+    end
   end
 
   ######################################
