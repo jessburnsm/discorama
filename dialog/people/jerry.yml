@@ -1,34 +1,45 @@
 :look: |
-  How do you know #{name}'s name is #{name}? He happens to be wearing a
-  HELLO MY NAME IS '#{name}' tag. It clashes tragically with his outfit.
+  > How do you know #{name}'s name is #{name}? He happens to be wearing a
+    HELLO MY NAME IS '#{name}' tag. It clashes tragically with his outfit.
 
-  Despite his poor fashion sense, he looks like a #{emphasis('non-threat')}.
+  > Despite his poor fashion sense, he looks confident as he practices dance poses.
 
 :take: |
-  As it turns out, forcibly abducting #{emphasis('HUMANS')} is no longer acceptable in polite
-  society. ...Even if they have abysmal fashion sense.
+  > As it turns out, forcibly abducting #{emphasis('HUMANS')} is no longer acceptable in polite
+    society. ...Even if they have abysmal fashion sense.
 
 :talk: |
-  #{name}: Look, look! It's #{player}! It's so good to see you, my friend!
+  > A man in a garish sequined suit greets you at the club door.
 
-  The word 'friend' was used by #{name}, but you have never met before. Odd.
+  #{name}: \tLook, look! It's #{player}! It's so good to see you, my friend!
 
-  #{name}: You're here for the dance battle, right? Woo, 3017 is going to be
-  a tough year, friend. The #{emphasis('ELITE FEET')} are already here and boy do
-  they look sharp! Wow! If you need any tips, don't be afraid to ask for #{highlight('help')}.
-  It can be really handy, you know?
+  > The word 'friend' was used by #{name}, but you have never met before. Odd.
 
-  #{name} waggles his eyebrows in a way you do not know how to interpret.
+  #{name}: \tYou're here for the dance battle, right? 3017 is going to be a tough year,
+  \tfriend! The #{emphasis('ELITE FEET')} are already here and boy do they look sharp!
+  \tIf you need any tips, don't be afraid to ask for #{highlight('help')}. It can be really handy,
+  \tyou know?
 
-  #{name}: You'd better get out there friend, if you want to win!
+  > #{name} waggles his eyebrows in a way you do not know how to interpret...
+
+  #{name}: \tYou know how to dance, right?
+  \tWhen you #{emphasis('BATTLE')} an opponent, you need to #{emphasis('DANCE')} to lower their #{emphasis('HP')} to win.
+  \tIf an opponent has high #{emphasis('CP')}, it will be tougher to lower their #{emphasis('HP')}!
+  \tSo #{emphasis('TAUNT')} your opponent to lower their #{emphasis('COOL POINTS')}!
+  \tIf you need some help, you can always #{emphasis('RALLY')} the crowd for a boost!
+
+  > And with that, #{name} turns and walks away in a blinding flash of sequins, leaving you to your own devices.
 
 :talk_2: |
-  #{name}: What's that, friend? You want to practice a little before you hit the
-  floor?
+  #{name}: \t#{player}! How have you been, friend? Finding things to keep you busy?
 
-  You are not certain how you implied that.
+  > Again, #{name} waggles his eyebrows in a confusing manner.
 
-  #{name}: No problem, friend! READY. SET. DANCE!!!!
+  #{name}: \tIf you get bored of the dancefloor, you can always walk around and #{highlight('talk')}
+  \tto people. You never know when you might get some useful intel! The #{emphasis('ELITE FEET')} has
+  \tfive members, so remember to take a break!
+
+  > #{name} returns to what he had been doing -- inspecting his hideous attire.
 
 :room_description: |
   A clubgoer named #{name} is practicing his dance moves in front of a mirrored
