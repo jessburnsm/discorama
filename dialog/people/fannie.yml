@@ -17,37 +17,37 @@
 :talk: |
   > You attempt to make a converstaion wi--
 
-  #{name}: \tGREETINGS PATRON WOULD YOU LIKE SOME HYGIENE.
+  #{name}: GREETINGS PATRON WOULD YOU LIKE SOME HYGIENE.
 
   > You try to tell #{name} that you don't need anything bu--
 
-  #{name}: \tPROCESSING REQUEST PARAMETERS. SANITIZING INPUT STRING.
+  #{name}: PROCESSING REQUEST PARAMETERS. SANITIZING INPUT STRING.
 
   > You try to cancel the request and you--
 
-  #{name}: \tCURRENTLY PADDING WHITESPACE.
+  #{name}: CURRENTLY PADDING WHITESPACE.
 
   > ...You resign yourself to the inevitable.
 
-  #{name}: \tHYGIENE COMPLETE.
+  #{name}: HYGIENE COMPLETE.
 
   > A number of sanitary products are dispensed onto the bathroom floor.
 
 :talk_2: |
-  #{name}: \tERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
+  #{name}: ERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
 
   > The #{emphasis('HYGIENE-O-MATIC')} makes an alarming grinding sound.
 
-  #{name}: \tPLEASE #{player} YOU ARE OUR ONLY HOPE OF DANCING SUPERIORITY. I AM
+  #{name}: PLEASE #{player} YOU ARE OUR ONLY HOPE OF DANCING SUPERIORITY. I AM
   \tYOUR BIGGEST FAN.
 
   > You are surprised and elated by #{name}'s declaration! Your heart soars, your mind races--
 
   > The #{emphasis('HYGIENE-O-MATIC')} makes an alarming grinding sound.
 
-  #{name}: \tERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
+  #{name}: ERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
 
-  > You vow to come back for #{name}.
+  > ...You vow to come back for #{name}.
 
 :room_description: |
-  A #{emphasis('HYGIENE-O-MATIC')} sits in the corner of the bathroom, humming softly. The word #{name} is etched onto the front of her faceplate.
+  A #{emphasis('HYGIENE-O-MATIC')} is present. The word #{name} is etched onto the faceplate.

@@ -17,7 +17,7 @@
 
   > #{information('YOU HAVE GAINED +5 HP')}
 
-:inventory_description: "heals for +5 hp."
+:inventory_description: "Heals for +5 hp."
 
 :room_description: |
   There is an #{name} propped up against the far wall of the room, near the coat racks.

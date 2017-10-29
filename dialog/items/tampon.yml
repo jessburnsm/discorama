@@ -1,11 +1,11 @@
 :look: |
-  > The #{name} lays, abandoned, on the tiled floor.
+  > A #{name} lays, abandoned, on the tiled floor.
 
 :talk: |
   > You talk at the #{name}, but it doesn't seem inclined to answer.
 
 :take: |
-  > You take the #{name}! It has been added to your #{highlight(inventory)}.
+  > You take the #{name}! It has been added to your #{highlight('inventory')}.
 
 :execute: |
   > You can't use the #{name} in the intended fashion.
@@ -15,7 +15,7 @@
 
   > #{information('YOU HAVE GAINED +1 TAUNT SKILL')}
 
-:inventory_description: "adds +1 to taunt skill."
+:inventory_description: "Adds +1 to taunt skill."
 
 :room_description: |
   There is a #{name} on the bathroom floor.
