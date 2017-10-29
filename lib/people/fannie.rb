@@ -11,11 +11,11 @@ class Fannie < Person
   end
 
   def set_dialog
-    YAML.load_file('dialog/fannie.yml')
+    YAML.load_file('dialog/people/fannie.yml')
   end
 
   def talk_cycle_1
     super
-    add_item_to_room(Umbrella)
+    add_item_to_room(Tampon)
   end
 end
