@@ -5,7 +5,7 @@
   > You talk at the #{name}, but it doesn't seem inclined to answer.
 
 :take: |
-  > You take the #{name}!
+  > You take the #{name}! It has been added to your #{highlight(inventory)}.
 
 :execute: |
   > You can't use the #{name} in the intended fashion.
@@ -14,6 +14,8 @@
     with someone wearing a #{name} so proudly!
 
   > #{information('YOU HAVE GAINED +1 TAUNT SKILL')}
+
+:inventory_description: "adds +1 to taunt skill."
 
 :room_description: |
   There is a #{name} on the bathroom floor.
