@@ -1,0 +1,53 @@
+:look: |
+  > It is clear that #{name} is from a different era of robotics.
+
+  > Specifically, and era in which #{emphasis('humans')} thought that putting
+    AI into everything was a good idea, even a tampon dispenser.
+
+  > Despite her outward apperance, you can't help but be drawn in by #{name}'s charms.
+    Maybe she'd go on a date with you? Hm, but she's bolted to the wall...
+
+:take: |
+  > You attempt to free #{name} from her bathroom prison.
+
+  > As you tug, you hear the groaning of metal, #{name} doesn't budge.
+
+  > You vow to return for her after the competition.
+
+:talk: |
+  > You attempt to make a converstaion wi--
+
+  #{name}: \tGREETINGS PATRON WOULD YOU LIKE SOME HYGIENE.
+
+  > You try to tell #{name} that you don't need anything bu--
+
+  #{name}: \tPROCESSING REQUEST PARAMETERS. SANITIZING INPUT STRING.
+
+  > You try to cancel the request and you--
+
+  #{name}: \tCURRENTLY PADDING WHITESPACE.
+
+  > ...You resign yourself to the inevitable.
+
+  #{name}: \tHYGIENE COMPLETE.
+
+  > A number of sanitary products are dispensed onto the bathroom floor.
+
+:talk_2: |
+  #{name}: \tERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
+
+  > The #{emphasis('HYGIENE-O-MATIC')} makes an alarming grinding sound.
+
+  #{name}: \tPLEASE #{player} YOU ARE OUR ONLY HOPE OF DANCING SUPERIORITY. I AM
+  \tYOUR BIGGEST FAN.
+
+  > You are surprised and elated by #{name}'s declaration! Your heart soars, your mind races--
+
+  > The #{emphasis('HYGIENE-O-MATIC')} makes an alarming grinding sound.
+
+  #{name}: \tERROR NO HYGIENE PLEASE HYGIENE ELSEWHERE.
+
+  > You vow to come back for #{name}.
+
+:room_description: |
+  A #{emphasis('HYGIENE-O-MATIC')} sits in the corner of the bathroom, humming softly. The word #{name} is etched onto the front of her faceplate.
