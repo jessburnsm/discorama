@@ -45,6 +45,8 @@ class Player
     puts "DANCE LVL: #{@dance_skill}" + (@dance_bonus > 0 ? @game_text.information(" + #{@dance_bonus}") : "")
     puts "TAUNT LVL: #{@taunt_skill}" + (@taunt_bonus > 0 ? @game_text.information(" + #{@taunt_bonus}") : "")
     puts "RALLY LVL: #{@rally_skill}"
+    puts "---------"
+    puts
   end
 
   ######################################
@@ -64,6 +66,8 @@ class Player
     @inventory.each do |key, content|
       puts content.name + " - " + content.description
     end
+    puts "---------"
+    puts
   end
 
   def use(target)
