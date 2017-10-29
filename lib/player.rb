@@ -62,7 +62,7 @@ class Player
     @game_text.inventory_list
     @game_text.inventory_error if @inventory.length == 0
     @inventory.each do |key, content|
-      puts content.name
+      puts content.name + " - " + content.description
     end
   end
 
