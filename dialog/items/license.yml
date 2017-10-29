@@ -1,0 +1,18 @@
+:look: |
+  > You don't recognize the picture on the id. The name listed is 'Ima Realman'.
+    ...Suspicious.
+
+:talk: |
+  > You speak to the #{name}, but 'Ima' doesn't answer.
+
+:take: |
+  > You take the #{name}! It has been added to your #{highlight('inventory')}.
+
+:execute: |
+  > You don't have a use for this right now. However, having an id might come
+    in handy later...
+
+:inventory_description: "An old id for 'Ima Realman'. You don't look like the picture at all."
+
+:room_description: |
+  An old driver's #{name} is on the table in the handicap stall.

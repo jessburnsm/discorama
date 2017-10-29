@@ -1,0 +1,47 @@
+:look: |
+  > The #{name} is seated amongst a number of occult items, including a deck of
+    tarot cards and a cystal ball. She does not look up at you.
+
+:look_2: |
+  > #{name} looks quite comfortable here in the restroom. You wonder why she
+    isn't out in the main club, though...
+
+:take: |
+  > You reach out to take the woman, but a mysterious force stops your hand!
+
+:talk: |
+  #{name}: #{name} is my name, and I have seen many things, metal-child.
+
+  > #{name} eyes you with a dark look.
+
+  #{name}: For you I'll use my crystal ball, for it can see even into your deepest
+  \tdepths, former thrall...
+
+  > The crystal ball on the table seems unresponsive.
+
+  #{name}: A being of war, now used for peace, your conquest is nigh, many men
+  \tshall fall to your feet.
+
+  > Still nothing from the crystal ball.
+
+  #{name}: Go forth! The battle is not yet done! There are more than you know that
+  \tshall praise what you've done!
+
+  > With a flourish, #{name} drops a card onto the table.
+
+  #{name}: A gift for your journey, metal-child.
+
+  > The card appears to be an old driver's #{'license'.cyan}.
+
+:talk_2: |
+  #{name}: Child of metal, built for war take what's left of your life and
+  \tdo something more!
+
+  > #{name} returns to shuffling her tarot deck. The crystal ball looks the same
+    as always.
+
+:room_description: |
+  The handicap stall is open - inside is a #{name} sitting at a table.
+
+:room_description_2: |
+  #{name} is shuffling her tarot cards in the handicap stall.
