@@ -1,5 +1,5 @@
 require_relative './person'
-require_relative '../items/item'
+require_relative '../items/tampon'
 
 class Fannie < Person
   def set_name
