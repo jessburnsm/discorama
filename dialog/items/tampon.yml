@@ -1,0 +1,19 @@
+:look: |
+  > The #{name} lays, abandoned, on the tiled floor.
+
+:talk: |
+  > You talk at the #{name}, but it doesn't seem inclined to answer.
+
+:take: |
+  > You take the #{name}!
+
+:execute: |
+  > You can't use the #{name} in the intended fashion.
+
+  > However, you hang it proudly on your chassis. No one will be willing to mess
+    with someone wearing a #{name} so proudly!
+
+  > #{information('YOU HAVE GAINED +1 TAUNT SKILL')}
+
+:room_description: |
+  There is a #{name} on the bathroom floor.
