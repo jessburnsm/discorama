@@ -9,6 +9,10 @@ class Item < Actor
     @name.to_s.cyan
   end
 
+  def description
+    @game_text.process(@dialog[:inventory_description])
+  end
+
   def take(player)
     super
     remove_item_from_room(key)
