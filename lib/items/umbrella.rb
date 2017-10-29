@@ -6,7 +6,7 @@ class Umbrella < Item
   end
 
   def set_dialog
-    YAML.load_file('dialog/umbrella.yml')
+    YAML.load_file('dialog/items/umbrella.yml')
   end
 
   def execute_effect(player)

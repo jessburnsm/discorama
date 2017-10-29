@@ -1,0 +1,23 @@
+:look: |
+  > The #{name} is black, with white polka-dots. Cute!
+    It appears to have been abandoned, as there hasn't been rain in New Atlanta
+    for days. Looking at the pattern of the #{name} puts you at ease. Odd.
+
+:talk: |
+  > You attempt to strike up a conversation with the #{name}. No response.
+
+:take: |
+  > You take the #{name}! It has been added to your #{highlight('inventory')}.
+
+:execute: |
+  > You twirl the #{name} like you saw in a movie once. Alarmingly, the umbrella
+    disintegrates right after.
+
+  > The heat of the flames soothes your wounds!
+
+  > #{information('YOU HAVE GAINED +5 HP')}
+
+:inventory_description: "heals for +5 hp."
+
+:room_description: |
+  There is an #{name} propped up against the far wall of the room, near the coat racks.
